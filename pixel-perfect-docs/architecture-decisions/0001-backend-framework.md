@@ -14,7 +14,6 @@ pre-trained models.
 
 ## Decision
 
-> - What is the change that we're proposing and doing?
 It is prudent to use the OpenCV framework with pre-trained models.
 Including OpenCV in the project eliminates the need of collecting training data, and model training process itself.
  
