@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+{% block content %}
+
+    <div class="content-section">
+        <div class="media">
+            <div class="media-body">
+                <h3 class="account-heading">Hi, {{ user.username|title   }}! </h3>
+                <h3>You’ve been with us since: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date_joined }}.</h3>
+                <br>
+                <p class="txt-secondary">Email: {{ user.email }}</p>
+                <form action="{% url 'upload'%}">
+                    <input type="submit" value="Save to Google Drive"/>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}
