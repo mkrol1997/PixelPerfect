@@ -23,5 +23,5 @@ urlpatterns = [
     path('oauth2callback/', OAuth2GoogleDriveAccessCallbackView.as_view(), name='callback'),
     path('send-image/', ImageUploadView.as_view(), name='upload'),
     path('accounts/social/signup/', RedirectInvalidLoginView.as_view(), name='signup_redirect'),
-    path('dashboard/', TemplateView.as_view(template_name='users/confirm.html'))
+    path('dashboard/', TemplateView.as_view(template_name='users/dashboard.html'), name='dashboard')
 ]
