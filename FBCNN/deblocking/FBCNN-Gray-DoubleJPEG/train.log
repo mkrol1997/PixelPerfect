@@ -1,0 +1,225 @@
+23-07-14 12:39:34.483 :   task: FBCNN-Gray-DoubleJPEG
+  model: fbcnn
+  gpu_ids: [0, 1]
+  n_channels: 3
+  merge_bn: False
+  merge_bn_startpoint: 40000000
+  path:[
+    root: deblocking
+    pretrained_netG: None
+    task: deblocking\FBCNN-Gray-DoubleJPEG
+    log: deblocking\FBCNN-Gray-DoubleJPEG
+    options: deblocking\FBCNN-Gray-DoubleJPEG\options
+    models: deblocking\FBCNN-Gray-DoubleJPEG\models
+    images: deblocking\FBCNN-Gray-DoubleJPEG\images
+  ]
+  datasets:[
+    train:[
+      name: train_dataset
+      dataset_type: jpeggraydouble
+      dataroot_H: ../trainsets/Data_DIV2K_Flickr2K
+      dataroot_L: None
+      H_size: 96
+      dataloader_shuffle: True
+      dataloader_num_workers: 16
+      dataloader_batch_size: 128
+      phase: train
+      scale: 1
+      n_channels: 3
+    ]
+    test:[
+      name: test_dataset
+      dataset_type: jpeg
+      dataroot_H: ../testsets/Classic5/origin
+      dataroot_L: ../testsets/Classic5/single/10
+      phase: test
+      scale: 1
+      n_channels: 3
+    ]
+  ]
+  netG:[
+    net_type: fbcnn
+    in_nc: 1
+    out_nc: 1
+    nc: [64, 128, 256, 512]
+    nb: 4
+    act_mode: BR
+    upsample_mode: convtranspose
+    downsample_mode: strideconv
+    init_type: orthogonal
+    init_bn_type: uniform
+    init_gain: 0.2
+    scale: 1
+  ]
+  train:[
+    G_lossfn_type: l1
+    G_lossfn_weight: 1.0
+    QF_lossfn_type: l1
+    QF_lossfn_weight: 0.001
+    G_optimizer_type: adam
+    G_optimizer_lr: 2e-05
+    G_optimizer_clipgrad: None
+    G_scheduler_type: MultiStepLR
+    G_scheduler_milestones: [200000, 400000, 1200000, 1600000, 1800000]
+    G_scheduler_gamma: 0.5
+    G_regularizer_orthstep: None
+    G_regularizer_clipstep: None
+    checkpoint_test: 2500
+    checkpoint_save: 5000
+    checkpoint_print: 500
+  ]
+  opt_path: options/train_fbcnn_graydouble.json
+  is_train: True
+  scale: 1
+
+23-07-14 12:39:34.489 : Random seed: 17
+23-07-24 15:38:01.707 :   task: FBCNN-Gray-DoubleJPEG
+  model: fbcnn
+  gpu_ids: [0, 1]
+  n_channels: 3
+  merge_bn: False
+  merge_bn_startpoint: 40000000
+  path:[
+    root: deblocking
+    pretrained_netG: None
+    task: deblocking\FBCNN-Gray-DoubleJPEG
+    log: deblocking\FBCNN-Gray-DoubleJPEG
+    options: deblocking\FBCNN-Gray-DoubleJPEG\options
+    models: deblocking\FBCNN-Gray-DoubleJPEG\models
+    images: deblocking\FBCNN-Gray-DoubleJPEG\images
+  ]
+  datasets:[
+    train:[
+      name: train_dataset
+      dataset_type: jpeggraydouble
+      dataroot_H: ../trainsets/Data_DIV2K_Flickr2K
+      dataroot_L: None
+      H_size: 96
+      dataloader_shuffle: True
+      dataloader_num_workers: 16
+      dataloader_batch_size: 128
+      phase: train
+      scale: 1
+      n_channels: 3
+    ]
+    test:[
+      name: test_dataset
+      dataset_type: jpeg
+      dataroot_H: ../testsets/Classic5/origin
+      dataroot_L: ../testsets/Classic5/single/10
+      phase: test
+      scale: 1
+      n_channels: 3
+    ]
+  ]
+  netG:[
+    net_type: fbcnn
+    in_nc: 1
+    out_nc: 1
+    nc: [64, 128, 256, 512]
+    nb: 4
+    act_mode: BR
+    upsample_mode: convtranspose
+    downsample_mode: strideconv
+    init_type: orthogonal
+    init_bn_type: uniform
+    init_gain: 0.2
+    scale: 1
+  ]
+  train:[
+    G_lossfn_type: l1
+    G_lossfn_weight: 1.0
+    QF_lossfn_type: l1
+    QF_lossfn_weight: 0.001
+    G_optimizer_type: adam
+    G_optimizer_lr: 2e-05
+    G_optimizer_clipgrad: None
+    G_scheduler_type: MultiStepLR
+    G_scheduler_milestones: [200000, 400000, 1200000, 1600000, 1800000]
+    G_scheduler_gamma: 0.5
+    G_regularizer_orthstep: None
+    G_regularizer_clipstep: None
+    checkpoint_test: 2500
+    checkpoint_save: 5000
+    checkpoint_print: 500
+  ]
+  opt_path: options/train_fbcnn_graydouble.json
+  is_train: True
+  scale: 1
+
+23-07-24 15:38:01.713 : Random seed: 2298
+23-07-24 15:48:23.887 :   task: FBCNN-Gray-DoubleJPEG
+  model: fbcnn
+  gpu_ids: [0, 1]
+  n_channels: 3
+  merge_bn: False
+  merge_bn_startpoint: 40000000
+  path:[
+    root: deblocking
+    pretrained_netG: None
+    task: deblocking\FBCNN-Gray-DoubleJPEG
+    log: deblocking\FBCNN-Gray-DoubleJPEG
+    options: deblocking\FBCNN-Gray-DoubleJPEG\options
+    models: deblocking\FBCNN-Gray-DoubleJPEG\models
+    images: deblocking\FBCNN-Gray-DoubleJPEG\images
+  ]
+  datasets:[
+    train:[
+      name: train_dataset
+      dataset_type: jpeggraydouble
+      dataroot_H: ../trainsets/Data_DIV2K_Flickr2K
+      dataroot_L: None
+      H_size: 96
+      dataloader_shuffle: True
+      dataloader_num_workers: 16
+      dataloader_batch_size: 128
+      phase: train
+      scale: 1
+      n_channels: 3
+    ]
+    test:[
+      name: test_dataset
+      dataset_type: jpeg
+      dataroot_H: ../testsets/Classic5/origin
+      dataroot_L: ../testsets/Classic5/single/10
+      phase: test
+      scale: 1
+      n_channels: 3
+    ]
+  ]
+  netG:[
+    net_type: fbcnn
+    in_nc: 1
+    out_nc: 1
+    nc: [64, 128, 256, 512]
+    nb: 4
+    act_mode: BR
+    upsample_mode: convtranspose
+    downsample_mode: strideconv
+    init_type: orthogonal
+    init_bn_type: uniform
+    init_gain: 0.2
+    scale: 1
+  ]
+  train:[
+    G_lossfn_type: l1
+    G_lossfn_weight: 1.0
+    QF_lossfn_type: l1
+    QF_lossfn_weight: 0.001
+    G_optimizer_type: adam
+    G_optimizer_lr: 2e-05
+    G_optimizer_clipgrad: None
+    G_scheduler_type: MultiStepLR
+    G_scheduler_milestones: [200000, 400000, 1200000, 1600000, 1800000]
+    G_scheduler_gamma: 0.5
+    G_regularizer_orthstep: None
+    G_regularizer_clipstep: None
+    checkpoint_test: 2500
+    checkpoint_save: 5000
+    checkpoint_print: 500
+  ]
+  opt_path: options/train_fbcnn_graydouble.json
+  is_train: True
+  scale: 1
+
+23-07-24 15:48:23.894 : Random seed: 9462
