@@ -41,27 +41,38 @@ class UpscaleImageView(View):
             image_db.img_path = img_path
 
         image_db.save()
-        return JsonResponse({"src": image_db.img_path.url})
+        return JsonResponse({"src": image_db.img_path.url, "img_id": image_db.id})
 
 
 class EnhanceImageView(View):
     def get(self, request):
         form = EnhanceImagesForm
-        return render(request, template_name="enhance-image.html", context={"form": form})
+        return render(request, template_name="upscale-image.html", context={"form": form})
 
     def post(self, request):
         upscale_params = {
             "src_image": request.FILES.get("src_image"),
-            "cnn_model": request.POST.get("upscale_method"),
-            "scale": int(request.POST.get("upscale_size")),
+            "img_type": request.POST.get("image_type"),
             "user_id": str(request.user.id),
-            "do_compress": request.POST.get("do_compress"),
-            "quality_factor": request.POST.get("compress_q_factor"),
+            "quality_factor": request.POST.get("quality_factor"),
         }
 
-        upscaled_image = ImageManager.upscale_image(**upscale_params)
+        enhanced_image = ImageManager.enhance_image(**upscale_params)
+        image_name = enhanced_image.split("\\")[-1]
 
-        return reverse("upscale")
+        img_path = os.path.join("/enhanced)images/{}/{}".format(request.user.id, image_name))
+
+        image_db = EnhancedImages.objects.filter(img_path=img_path).first()
+
+        if not image_db:
+            image_db = EnhancedImages(
+                img_owner=self.request.user, img_path=img_path, img_name=Path(enhanced_image).name
+            )
+        else:
+            image_db.img_path = img_path
+
+        image_db.save()
+        return JsonResponse({"src": image_db.img_path.url, "img_id": image_db.id})
 
 
 class ImagesListView(ListView):

@@ -3,12 +3,11 @@ function modal(){
 }
 
 const image = document.getElementById("new-image");
-const form = document.querySelector('form');
+const form = document.getElementById('image_form');
 const src_image = document.querySelector('#id_img_path');
 
 const content = document.getElementById('image-modal')
 const loader = document.getElementById('loader')
-
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -31,6 +30,10 @@ form.addEventListener('submit', (e) => {
     .then((json) => {
         loader.style.display = 'none';
         content.style.display = 'block';
+
         image.src = json.src + timestamp;
+
+        document.getElementById('download').setAttribute("href", 'http://localhost:8000/download/'+json.img_id)
+        document.getElementById('saveGDrive').setAttribute("href", 'http://localhost:8000/send-image/'+json.img_id)
     });
 });
