@@ -70,6 +70,7 @@ GOOGLE_OAUTH_REDIRECT_URI = "http://localhost:8000/oauth2callback"
 LOGIN_REDIRECT_URL = "/dashboard"
 LOGOUT_REDIRECT_URL = "/"
 
+
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 os.environ["OAUTHLIB_RELAX_TOKEN_SCOPE"] = "1"
 

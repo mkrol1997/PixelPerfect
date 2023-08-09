@@ -57,9 +57,9 @@ def enhance(src_image_path, cnn_model, quality_factor, save_to):
     img_L = img_L.to(device)
 
     qf_input = (
-        torch.tensor([[1 - quality_factor / 100]]).cuda()
+        torch.tensor([[quality_factor / 100]]).cuda()
         if device == torch.device("cuda")
-        else torch.tensor([[1 - quality_factor / 100]])
+        else torch.tensor([[quality_factor / 100]])
     )
     img_E, QF = model(img_L, qf_input)
     QF = 1 - QF
@@ -71,4 +71,4 @@ def enhance(src_image_path, cnn_model, quality_factor, save_to):
 
 
 if __name__ == "__main__":
-    main()
+    ...

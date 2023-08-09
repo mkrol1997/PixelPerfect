@@ -1,3 +1,4 @@
+
 function modal(){
     $('.modal').modal('show');
 }
@@ -33,7 +34,7 @@ form.addEventListener('submit', (e) => {
 
         image.src = json.src + timestamp;
 
-        document.getElementById('download').setAttribute("href", 'http://localhost:8000/download/'+json.img_id)
-        document.getElementById('saveGDrive').setAttribute("href", 'http://localhost:8000/send-image/'+json.img_id)
+        document.getElementById('download').setAttribute("href", 'http://localhost:8000/images/download/'+json.img_id)
+        document.getElementById('saveGDrive').setAttribute("href", 'http://localhost:8000/images/send-image/'+json.img_id)
     });
 });

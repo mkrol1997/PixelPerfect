@@ -1,25 +1,16 @@
 from __future__ import annotations
 
-import os
-
-import google.auth
-import google.oauth2.credentials
-import google_auth_oauthlib.flow
-import googleapiclient.discovery
-import requests
+import google_auth_oauthlib
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.http import FileResponse, HttpResponse, JsonResponse
 from django.shortcuts import redirect, reverse
 from django.views import View
 from django.views.generic import CreateView
 from django.views.generic.base import RedirectView
-from images.models import EnhancedImages
 from users.forms import UserRegisterForm
-from users.gdrive.manager import get_gdrive_folder_id, uploadImage
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
@@ -90,43 +81,3 @@ class OAuth2GoogleDriveAccessCallbackView(View):
         }
 
         return redirect(reverse("upload", kwargs={"pk": request.session.get("img_id")}))
-
-
-class ImageUploadView(View):
-    def get(self, request, pk):
-        if not request.session.get("credentials", False):
-            request.session["img_id"] = pk
-            return redirect("authorize")
-
-        credentials = google.oauth2.credentials.Credentials(**request.session["credentials"])
-
-        image_db = EnhancedImages.objects.get(pk=pk)
-
-        img_abs_url = str(settings.BASE_DIR) + image_db.img_path.url
-        image_name = image_db.img_name
-        folder_id = get_gdrive_folder_id(credentials)
-
-        params = {
-            "src_image": img_abs_url,
-            "save_image_name": image_name,
-            "mime_type": "image/jpeg",
-            "folder_id": folder_id,
-        }
-
-        uploadImage(credentials=credentials, **params)
-
-        if request.session.get("img_id", None):
-            request.session.pop("img_id")
-
-        messages.success(request, "Image saved to Google Drive! You can access all images in the gallery!")
-        return redirect(reverse("upscale"))
-
-
-class ImageSaveView(View):
-    def get(self, request, pk):
-        image_db = EnhancedImages.objects.get(pk=pk)
-
-        img_abs_url = str(settings.BASE_DIR) + image_db.img_path.url
-        response = FileResponse(open(img_abs_url, "rb"), as_attachment=True)
-
-        return response
