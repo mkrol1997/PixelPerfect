@@ -3,8 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="col-xl-12 d-flex justify-content-center">
-    <form method="POST" enctype="multipart/form-data">
+<div class="col-xl-12 d-flex justify-content-center" style="margin-top: 100px">
+    <form method="POST" enctype="multipart/form-data" id="image_form">
         {% csrf_token %}
         {{ form | crispy }}
         <input type="submit" value="Process" onclick="modal()" class="btn btn-primary" id="submit">
@@ -21,8 +21,8 @@
             </div>
             <div class="modal-footer bg-dark">
                 <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Download</button>
-                <button type="submit" class="btn btn-primary">GDrive</button>
+                <a href="#" type="button" class="btn btn-secondary ml-auto" id="download">Download</a>
+                <a href="#" type="button" class="btn btn-primary" id="saveGDrive">GDrive</a>
             </div>
         </div>
     </div>
@@ -38,5 +38,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    var sessionValue = '<%=Session["image"]%>'
+    if (typeof maybeObject != "undefined") {
+</script>
+
 
 {% endblock %}
