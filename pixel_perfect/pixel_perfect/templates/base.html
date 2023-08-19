@@ -11,12 +11,17 @@
     <title>PixelPerfect</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 
     <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.ico' %}"/>
+
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
 </head>
 
-<body class="bg-light">
+<body class="gradient-background " style="min-height: 100vh">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark" id="mainNav">
 
         <a class="navbar-brand px-3" href="{% url 'login' %}"><img src="{% static 'assets/images/navbar-brand.png' %}"
@@ -48,9 +53,15 @@
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item drop-itm" href="{% url 'upscale' %}">Upscale</a>
                       <a class="dropdown-item drop-itm" href="{% url 'enhance' %}">Enhance</a>
-                      <a class="dropdown-item drop-itm" href="#">Full Restoration</a>
+                      <a class="dropdown-item drop-itm" href="{% url 'full-enhancement' %}">Full Restoration</a>
                     </div>
                 </li>
+
+                {% if user.has_usable_password %}
+                     <li class="nav-item px-4">
+                        <a class="nav-link" href="{% url 'account_change_password' %}">Change password</a>
+                    </li>
+                {% endif %}
 
                 <li class="nav-item px-4">
                     <a class="nav-link" href="{% url 'images-list' %}">Images</a>
@@ -59,7 +70,7 @@
                 {% endif %}
 
                 <li class="nav-item px-4">
-                    <a class="nav-link " href="#">Contact</a>
+                    <a class="nav-link " href="{% url 'contact' %}">Contact</a>
                 </li>
                 {% if user.is_authenticated %}
 
@@ -73,22 +84,26 @@
     </nav>
 
 
-    <main role="main" class="row vh-100 mw-100 shadow p-3 rounded bg-white login-page">
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} mw-60 ml-auto mr-auto">
-                {{ message }}
+
+    <main role="main" class="row shadow rounded bg-white login-page" style="min-height: 100vh">
+        {% if messages %}
+        {% for message in messages %}
+            <div class="container-fluid w-50">
+                <div class="alert alert-{{ message.tags }} text-center  center-block">
+                    {{ message }}
+                </div>
             </div>
-            {% endfor %}
-            {% endif %}
+        {% endfor %}
+        {% endif %}
+
 
         {% block content %}
         {% endblock %}
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
     <script src="{% static 'js/dropdown_on_hover.js' %}"></script>
 

@@ -99,4 +99,4 @@ def enhance(src_image_path, cnn_model, quality_factor, save_to):
 
 
 if __name__ == "__main__":
-    main()
+    ...

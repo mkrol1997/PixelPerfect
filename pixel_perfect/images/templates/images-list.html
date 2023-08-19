@@ -4,21 +4,21 @@
 
 {% block content %}
 
-<div class="container page-top">
+<div class="container">
     <div class="row">
 
-        {% for object in objects %}
+        {% for image in images %}
         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12 thumb">
-            <div class="hovereffect">
+            <div class="hovereffect shadow">
 
-                <img class="zoom img-fluid img-responsive" src="{{ object.img_path.url }}" alt="">
+                <img class="zoom img-fluid img-responsive" src="{{ image.img_path.url }}" alt="">
                 <div class="overlay">
-                    <h2>{{ object.img_name }}</h2>
+                    <h2>{{ image.img_name }}</h2>
                     <a class="info" href="#" onclick="gallery_modal(
-                   img_src='{{ object.img_path.url }}',
-                   img_title='{{ object.img_name | upper }}',
-                   img_dwnld_url = '{{ object.id }}',
-                   img_gdrive_upld_url = '{{ object.id }}')">Details</a>
+                                               img_src='{{ image.img_path.url }}',
+                                               img_title='{{ image.img_name | upper }}',
+                                               img_dwnld_url = '{{ image.id }}')"
+                        >Details</a>
                 </div>
 
             </div>

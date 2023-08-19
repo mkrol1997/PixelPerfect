@@ -5,29 +5,29 @@
 
 {% block content %}
 
-    <section class="container-fluid" style="display: block; overflow: auto;">
+
+    <section class="wrapper">
         <div class="row">
-            <div class="col-12 text-center welcome-text" style="width: 100% !important %">
-                <img src="{% static 'assets/images/navbar-brand.png'%}" class="fostrap-logo" style="width: 30vw; padding-top: 2%"/>
-                <h2 class="rainbow-text" style="padding-bottom: 1vh;">Where the magic exists!</h2>
-            </div>
-
-            <div class=" col-md-12 col-lg-12 col-xl-8 h-100 d-inline-block">
-
-                <div class="col-12 d-flex align-items-center justify-content-center  align-middle" style="padding-top: 5vh">
-                    <div class=" juxtapose shadow img-fluid rounded">
-                        <img src="{% static 'assets/images/before.png' %}" data-label="before">
-                        <img src="{% static 'assets/images/after.jpg' %}" data-label="after">
-                        <script src="{% static 'js/slider.js' %}"></script>
+            <div class="col-md-12 col-lg-12 col-xl-8 pb-5">
+                <div class="row">
+                    <div class="col-12 d-flex align-items-center justify-content-center ">
+                        <div class="juxtapose shadow img-fluid">
+                            <img src="{% static 'assets/images/before.png' %}" data-label="before">
+                            <img src="{% static 'assets/images/after.jpg' %}" data-label="after">
+                            <script src="{% static 'js/slider.js' %}"></script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 w-100 text-center">
+                            <p>Upscale your old images, decompress it's size and remove artifacts all in one place</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 d-flex align-items-center justify-content-center  align-middle">
-                    <h3 style="margin-top: 20px; text-align: center;">Upscale your old images, decompress it's size and remove artifacts all in one place</h3>
-                </div>
+
 
             </div>
-            <div class="col-md-12 col-lg-12 col-xl-4 vh-60 d-inline-block d-flex align-items-center justify-content-center">
-                <div class="d-inline-block shadow p-3 rounded">
+            <div class="col-md-12 col-lg-12 col-xl-3 d-flex align-items-center justify-content-center shadow pb-3 rounded bg-light ">
+                <div class="d-inline-block">
                     <form method="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
@@ -36,7 +36,7 @@
 
                         <div class="d-flex justify-content-around align-items-center mb-4">
 
-                            <a href="{% url 'password_reset' %}">Forgot password?</a>
+                            <a href="#">Forgot password?</a>
                         </div>
 
                         <!-- Submit button -->

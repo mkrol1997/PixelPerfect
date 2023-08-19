@@ -81,3 +81,7 @@ class OAuth2GoogleDriveAccessCallbackView(View):
         }
 
         return redirect(reverse("upload", kwargs={"pk": request.session.get("img_id")}))
+
+
+class ContactView(TemplateView):
+    template_name = "users/contact.html"

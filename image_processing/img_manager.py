@@ -10,12 +10,17 @@ class ImageManager:
     enhanced_img_path = os.path.join(settings.BASE_DIR, "media/enhanced_images/")
 
     @staticmethod
-    def upscale_image(src_image, cnn_model, scale, user_id, do_compress, quality_factor):
+    def upscale_image(src_image, cnn_model, scale, user_id, do_compress, quality_factor, enhance_after: bool):
+        if enhance_after:
+            path = os.path.join(ImageManager.enhanced_img_path, user_id)
+        else:
+            path = os.path.join(ImageManager.upscaled_img_path, user_id)
+
         upscaled_img_path = ImgProcesses.upscale_image(
             src_image_bytes=src_image,
             model=cnn_model,
             scale=scale,
-            save_to_path=os.path.join(ImageManager.upscaled_img_path, user_id),
+            save_to_path=path,
         )
 
         if do_compress:

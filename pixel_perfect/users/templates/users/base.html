@@ -1,84 +1,16 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block content %}
 
-    <title>PixelPerfect</title>
+    <div class="row mx-auto">
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="{% static 'base.css' %}">
-
-  </head>
-
-  <body class="bg-light">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark" id="mainNav">
-
-                <a class="navbar-brand px-3" href="{% url 'login' %}" ><img src="{% static 'assets/images/navbar-brand.png' %}" style="width: 300px"></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                 Menu
-                <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-
-                {% if not user.is_authenticated %}
-                  <li class="nav-item px-2">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                  </li>
-                  <li class="nav-item px-2">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
-                  </li>
-                {% endif %}
-
-
-                {% if user.is_authenticated %}
-                  <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Dashboard</a>
-                  </li>
-                  <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Images</a>
-                  </li>
-
-                {% endif %}
-
-                    <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
-                {% if user.is_authenticated %}
-
-                  <li class="nav-item px-2">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                  </li>
-
-                {% endif %}
-                </ul>
-          </div>
-      </nav>
-
-
-    <main role="main" class="row vh-100 vw-100 shadow p-3 rounded bg-white login-page">
-             <div class="col-lg-12 d-flex justify-content-center mt-3 position-relative text-center" >
-                 {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }} mw-50">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                 {% endif %}
-         </div>
-              {% block content %}
-                {% endblock %}
-    </main>
-
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-</html>
+{% endblock %}
