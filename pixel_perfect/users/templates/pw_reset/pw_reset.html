@@ -1,0 +1,20 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group col-md-11" >
+                <legend class="border-bottom mb-4" >Password Reset Form</legend>
+                <h5 class="text-left">Forgotten your password? <br><br> Enter your email address below, and we’ll email instructions for setting a new one.</h5>
+                <br>
+                {{ form|crispy }}
+
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Send Email</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

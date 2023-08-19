@@ -56,7 +56,7 @@ def enhance(src_image_path, cnn_model, quality_factor, save_to):
 
     if n_channels == 3:
         img_L = cv2.cvtColor(img_L, cv2.COLOR_RGB2BGR)
-    _, encimg = cv2.imencode(".jpg", img_L, [int(cv2.IMWRITE_JPEG_QUALITY), quality_factor])
+    _, encimg = cv2.imencode(".jpg", img_L, [int(cv2.IMWRITE_JPEG_QUALITY), 100 - quality_factor])
     img_L = cv2.imdecode(encimg, 0) if n_channels == 1 else cv2.imdecode(encimg, 3)
     if n_channels == 3:
         img_L = cv2.cvtColor(img_L, cv2.COLOR_BGR2RGB)

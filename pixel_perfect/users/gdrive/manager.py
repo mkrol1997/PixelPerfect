@@ -1,4 +1,5 @@
 import googleapiclient
+import googleapiclient.discovery
 from django.conf import settings
 from google.oauth2.credentials import Credentials
 from googleapiclient.http import MediaFileUpload

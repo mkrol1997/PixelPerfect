@@ -1,13 +1,93 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
+
     <div class="col-xl-12 d-flex justify-content-center">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form | crispy }}
-        <input type="submit" value="Upload" class="btn btn-primary">
-        </form>
+
+
+        <div class="form-group mt-5" style="width: 40%">
+            <form method="POST" enctype="multipart/form-data" id="image_form">
+                {% csrf_token %}
+
+                <h2 class="heading text-center" style="margin-bottom: 50px">1. Choose image:</h2>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputFile1">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                        {{ form.img_path }}
+                        <label class="custom-file-label" for="id_img_path">Choose file</label>
+                    </div>
+
+                </div>
+
+                <h2 class="heading text-center " style="margin: 50px 0;">2. Select type of the image:</h2>
+
+                <fieldset class="d-flex justify-content-center" style="margin: 5% 0 8%;">
+                    {% for radio in form.image_type %}
+                    <div class="radio-toolbar" style="display: inline">
+                        {{ radio }}
+                    </div>
+                    {% endfor %}
+                </fieldset>
+
+                <h2 class="heading text-center" style="margin-bottom: 50px">3. AI Enhance factor:</h2>
+
+                    {{ form.quality_factor }}
+
+                <br>
+
+                <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4" id="submit"
+                       style="width:100%; border-radius: 40px;">
+            </form>
+        </div>
     </div>
+
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1">
+
+        <div class="modal-dialog modal-lg" role='document' id="image-modal">
+            <div class="modal-content h-60">
+                <div class="d-flex align-items-center bg-dark">
+                    <img id="new-image" src="" class="img-fluid mr-auto ml-auto" style="height: 60vh">
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
+                    <a href="#" type="button" class="btn btn-secondary ml-auto" id="download">Download</a>
+                    <a href="#" type="button" class="btn btn-primary" id="saveGDrive">GDrive</a>
+                </div>
+            </div>
+        </div>
+        <div class="loader text-center" id="loader">
+            <div class="loading ml-auto mr-auto">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="loader-message m-5 bg-dark rainbow-text">
+                <h2 class="font-weight-bold">Please wait while we do our magic!</h2>
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'footer.html' %}
+
+    <script src="{% static 'js/fetch_image.js' %}"></script>
+    <script src="{% static 'js/form_validation.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+
+    <script type="application/javascript">
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $('.custom-file-label').html(fileName);
+            document.getElementById('inputFile1').classList.add('gradient-background')});
+    </script>
 
 {% endblock %}
