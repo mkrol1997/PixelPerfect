@@ -66,7 +66,8 @@
 
             {{ form.quality_factor }}
             <br>
-            <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4" id="submit"
+            <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4"
+                   id="submit"
                    style="width:100%; border-radius: 40px;">
         </form>
     </div>
@@ -100,11 +101,9 @@
     </div>
 </div>
 
-
-{% include 'footer.html' %}
-
 <script src="{% static 'js/fetch_image.js' %}"></script>
 <script src="{% static 'js/form_validation.js' %}"></script>
+<script src="{% static 'js/radio_btn_update.js' %}"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -118,6 +117,7 @@
             $('.custom-file-label').html(fileName);
             document.getElementById('inputFile1').classList.add('gradient-background');
         });
+
 
 
 </script>

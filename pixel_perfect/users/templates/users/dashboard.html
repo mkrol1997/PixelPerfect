@@ -4,16 +4,16 @@
 
 
 <section class="wrapper">
-    <div class="container-fostrap">
+        <div class="container-fostrap" style="padding-top: 5%; margin-bottom: 5%">
         <div>
             <h1 class="heading" style="margin-bottom: 50px">
                 Choose action to perform
             </h1>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-4 mt-sm-5 mt-md-4 mt-lg-3 ">
-                    <div class="card-deck h-100" style="border-radius: 1rem">
+            <div class="row align-items-end" style="height: 20% !important">
+                <div class="col-xs-12 col-sm-12 col-lg-4">
+                    <div class="card-deck" style="border-radius: 1rem">
                         <a class="img-card" href="{% url 'upscale' %}">
                             <img src="https://icon-library.com/images/resize-icon/resize-icon-4.jpg"
                                  style="height: 200px !important;"/>
@@ -35,8 +35,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-lg-4 mt-sm-5 mt-md-4 mt-lg-3">
-                    <div class="card-deck h-100 rounded-2" style="border-radius: 1rem">
+                <div class="col-xs-12 col-sm-12 col-lg-4">
+                    <div class="card-deck" style="border-radius: 1rem">
                         <a class="img-card" href="{% url 'enhance' %}">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAilBMVEX///8AAAD+/v75+fnx8fH19fXu7u7r6+vMzMzi4uIEBAT4+Pjn5+fb29sODg6dnZ1XV1eAgIB1dXVtbW2VlZWtra25ublkZGQ9PT2Pj4/FxcVfX1/Kysq2trakpKTV1dUlJSUzMzNPT09DQ0MXFxeGhoYsLCx8fHwUFBQjIyMcHBxSUlI6OjpCQkI5WZePAAAPDklEQVR4nN1diZqiOBAWPPBCvG3v2+6xnfd/vTFHBYgJRwWRzL/77c4ooVNUpe6ia7WKwnXJv3nXkCW5l30IbLc519hDHo5AqyjE0EcotIdA+g9qoR1wUTJqEf53+v57AjF28DNAqgpKYcFbeQ9wfLCEexTUfcq/xi4KMU6XPSSi1IU1OqaGlTeLzIRr14nKD4t4gcL/7lS69vgkWNhCHjICpYusINHFaEN+/qwgsIbShzZlSZB5IIusIE7fW2QlsDu1hkAbmGG0PwvISzjvGfZuAQNN9oiyg2XD0PG1gECDU1h98awZqQm+supUungarXC6jA6RFYGdqY6pOIXG0XXVCTTSoqXiv4+ukV0WFSLOr6dcgOqyqI6EdgaOs0q8Ahl8VkZNrB3HeSRtBVt2qwh9tb5DsNdfYH2XxY5SONJ+76IprAjcM6XQ0X6PEbbOZOEb7apI+IxAZ6v+GpfCIzdsGG6sMIw4hSfVl0hlMSM3DMz2lRP6g1R3AB3lOtQJPJH73dQbeQ8SEh0B2cyB/GesWITbUsdJU8+FQ09h03G6jsPOoi+tQQcFS0ah/MjeCb26mDjdrrOuTcmOzq60BilTzQOjcNBCLcdAz40ZP4HNO/n/MrYI7ZIEcLKvuPX5oWdG2wHCGKmz+DIchWB+nmijbpAbemYwAo80sFgnGcU8aFBxGF+pnPbN75eKhOO0jVqJ+oX+ZWr680ig8kSrd1doL90OTTM56m9aY0YgxE1cxQ9VZpHeqddstCgazZ5uRy6Tdmdeq63Yn3ZpoadZqJxgJXZ32Vnb88OzlFVgY7scL9bnx+E+oLgfjufhYjIK5m3fi104+3LEyeYevfPYebVkmPj1Ov77V05fLPL1B1zLj2MaonF09Bj8CvezPfmBZ8Q+AJ3aXSTF10b0qdf2dmLLt7hINk7wxSUIGTmPENR9Wk8J3K53LuKT2evKrt6/Mcn4KzPi/iTc3PXl2yD8cgiMXCWw8Ik1u+oh1kWemrcQvNbvEp3wV+uYVrg1ZQTX/w4v4N+7T5X0czytF5PxiGI8WaxPX4c4x8SqTfR2vmC5nkAcfVolKgTnoJMbT3BjBx/1+62efFm96fX32+AKR2wZim1TXDMSH36rN2liJzSLO+JnHtTx2+workjOv8mYi0N85Ha+8Rc++avyJFzTfkHN4vkfJ4GE9k18OcgewfKf5AVwb3oUW1y13pdqE/u+XNxmMngVKIZQ1NbzdEvNEVXZcybiP8/71pkw3HTZEdTes8KbgUQ9oo+3MeSffgU5/Mm4V1Gn/qgzJHEZCT3HLwcYFr07e+dzPd4NSWxwh+TUzvfDpd0yV2bLbMxSt6SMuueeqxRgV48dwZ98+kVh0Kio3456DVorrWrDdPmBu11McNfN5DUvUGxUKNUvrYNeVoqZeTAL+md2fnJH5aq9ggufZG7KqmkwEolXwoJhfWpfA7VJY9G0cy5ii6ZgnGvW3C+uAXNBZ7K54zRTfGWM3Kw/M9bRwPWQ8wxqfRKXxRlqQ1E2mBfXuKUcGwWSTBoVjYnx5orBN7HLQ4SMJlV4abqtpERbKlrOgDtxeXaUpu5H5Wa8kzFxfgYkijtkX8JdkiQavbTkTInYOIyHu/RLBarTg6BDP9jyDbq1Og+YchQ03cpTSJwOfkxcCJkWOdZXftStIzxuulM/zcOyDh6l6NIUGpF4yvfMAW/1wRO829Bmk1Cu3KL7W+H+Cp9R2LT29X+SUVaPCaqvLQRy7jOAMLBw6t7aZaG5ueLjjcN9YhsaxBnyCRtTo3/r1pBHkEtKWQbFs6kTL99GpzyGsGFSiiPfTjfgYduiRfMmVnt/8vqfBcDsUeaUNWoJ72X2ROKqS2JJ3tWbDzjYmPMOS3K3JtfviWn2twDXfStEO+dimv76U6qGwTWnuvzNTHkfjp872WQOnEniHRa5H8+vJTIars55Pc2z38pMQhvSl3cxb+a+5i2d4fGeJgQ9RrybaVBAd2UGIE7Ryx3yXU/UTNehzTvDfIMeuG2WH5qJoiwV1ew/HDlXWX5sRktnA+gnze7XoGZ4XXMRzY3GhefW9nzCSd8lKwHnkpQfudCGhF/6xxn0Ck0zGA7cXj8wQB+bFhGieksXVZSwfeINAbQPK2xB2EPn2jq5/oU2aKUTSFuUunX5EyqqCcuqX14CsI7ZeewzL11U0RwsvzLKWn6nUt1lw1vYnIm6RQ99mq6lV7fbGm65oqFbUZLB+5RUq23SrysKT0aILl1nKIlPC5rMb215FX5CYFRyrst9KpXI8EAgi+oRRDVKvJFLQm/XLfEoNshwoTOD9vujLKpTIH4nSDJSobzbS+55aHod3/fbBHvf7/S9ooI4l+Vmhs/TCO33C+nxdkBUz22xyMCpZKXJ6Mx0PxgPzzfRdc1wuZ2Hk+W2bTqA6ZIJWId3yGoVywrEmLUrG/XPizkAEaH1nUSYpY1cl5l23jHaAG4d5NuK7nVaFjaJzcUwitA1UycRp6S7pcLlfYdCLkPFIklHZw2iajZ8TRtnD5coc2Z66kjOwYRCwolO7HHWanUhqrIqmMMk27eBDqhTyzSlgnPharv+lJzbcDya7mYrqmlW81mw/J4Mj/RozpPvmAQqa3MQPYE+iOqXJKo9ENULvuuVToxdGjU6R7KGT1sNZZxWb7b8ecYo9RVwlqj5lbyyFczQTSRudSDTcUa+sYP5uttIIf19AIeEMOz2InahYpE0yhaIx+QcG+wsU5+UdVafEu2+SRTpChIJV35fL9AqluaVf3HPnXPkw1Rf7G/sB3TlRxjbJboIHckD1R+OxkcUw12yYtmDqObKOTbnPP9z5LXJJrf8XzNdsdLAJkW4r6cQhpMcZyArFqHel1l3sB+Dx3IK5w5BTJyJ0qib5fvFchpXrDXX9YFbXxK3esJsZ1Llu3D6NzbiFJr6gezwm45VRsSbtKeftffagqjKiiVPzjGc5pMPtT8UX8UqXsZjlVEBIAZqoC/bC8XyR1YsYc4xrSUTHoYqjg79GWmDxWV/qKQkqQwfNniSuJUh58g2KubCf66SYXeX4CdF9blR5PIKmsFIfs/FFnZxlbjlQ85xqA5xuMpuCJUi1Qra4fkMDWPhCf8G8Z8eydc0Ydr6R1YsOwirXjQFBZwmLxCj3xFVIxKWt2nEqSo+QUkfcFoMJhTLWhJVkXOUUwMEUXWxB/UrsmxwwscbN76o6IoNdb1TIxR3BtxaStxqH/kXcmpAVvjeKEYivCZKzlS+oZlu8HI+lGgAt/5kzDm+Kvz9ILxsqziXYl0+AlJBFXY3Q5/XHjLEQ+m5q1MDjMJNEFHUPXaHPWQujiW9BYtqxHWWB7fT2cAViOoYRJVzIojziTqJZPKXnutbWa/5asc1QBK0ikWkBgYsNcBFlE6jR6NAj4a+Mzaljg5ucyPPxI9WsfTB6j32QiF6lOcxh4wqti96k7fMx2rA3MPb6zNVia4+5wgOCnnNhAg+nZ/4oxCuaKkjznVeuZDK2hqtRhVLV1Ys5HoqDGROkbEH+qljyDKl/gbUuUW/xZwWbflsBS7KWE6PD53ugJBIoghfyWl4z9Cx5BkqF1TIIupAaS2TUCxdmYD5jQ/Ujjz61F4zJNxZ07wM440QcQy44W5imO3BeTpKMV89DAcJXlNNrIyQ5S10RaMJUc6FVi9T/cMVRBbR9Dh5Jv3fkEBVDoAqXbNcPRaxsnZ6lF0XWQhZ74vUgNICUWNYTnfgC1wR0ASZghiRczxpco5Km05yQ3+M9QzWeRXvTntkK2qt4A16cs5xED3SEpq7oIBxB7R/vjk8NeTgufFJpl24EObFRZUK8B27h0wwiECCrjOgFn2X6SYd0KqRYgYrg76zJd6N5O1zL9VXnzQIc47A9oVWzRQEns1Bt/lHnJZMAU5PKmasNKawMLhiHAE1bUMWhanabO+JiOUc2QsY3jf47fLJQfS0jRtJIDqvTosGW0jkXJkDrn3BlTlCytCNn6xheHQES5BJq4qc4+GtaiZiqFHPkD0eutdT6GJmLGvvI83wbyvvRiQTn7NiYQ8Rzg64mKdsjnJYhkgtEWOzhoUkxKl7yhuG53C8vjP5Wc1xRv2UNDeopaCohD9jBNzIHQGN2do+KIl/Uy9D9r8Xki5uUZcy4vuLEYwsZe2MA35IRV9MQpwWGCKhue+E3Zly9ekV2Qf8cKYs96JXsExRhFtn0p0JhuOSIqosgZ7mCGFH/YtJ+FM1E3n345ay0NUWSmNgMppqWz76yhQaAx/CrGJzAHsWZW25+hSiQ6PFtEToZ1/W0JS15ijccwtKgDeNqPrMm0l5+e6HX3kzZt6MwF4Yf/o3CDnWKiq2GYyK++m3bbRlJpykUxmO0sjb9NbZbP1nOehSHkWyK1Q13qMeWIPlHLvOIIjEf3UfjGZizFT+0KEMyqHIMDc7lVLir/2XJHJIYns43fidfsffjkQjQlKS8BNjlRI8+RzJp5IjABJlPBJDyY/Tx1t7Ik1uTM0o7J/3vFJBYJC8/8+/depFzTwkNRNB9BdgMPwsUwKmj6vRWu0gqRl6Ku+KDmy6UW82DH+9wGO8yhJcfZiFchLX03bKg8Jv+KvddDmdtTtWvE+R9X9ECrNUzSheG/xhnwQPmpOJJHHVasaasVgFSIZ0EDHi9FS+FGqtJa/GQtdIVEDL2PcXeqwRUcU+qfoXKTVPPpVslT1MVFgmPvjI8xSTVzXzidcEoKGUNUiNEvuwko1/zS4lo95oD6oxv52GHGPQVTgR/cRD0bJiBiVrWjuSW3qsUTJJeaBG5LeNffTN1oazFkm88I9A4Od+LYPx+7FS1vMu2Q/+3gmjODLLuE0rWCxGn/y1E4YjT9VXFmZCWn36DMYR+KOpPI14FtrhU5okOqxwK82UTOUJdI1nnipO4GdrbnmA3KY5B0sDJi3K2GcHB5HtdPaQhwyUi+qyUN25Grd83xEs/Lb4Louid/I22HSgELDEnuFhi8XGwhqDjYctHESKmkUaBuX/2sI+CpMWfyuAkjablChOIVoT2Rkwoyz6TC1S9VlhuMHK01czjJOrz0FDKa08dQWUoStPo2HBpvIimm6TEsaJqk8e3yW6pGFB4GOY8K86gabp1Oo7XZXfoAB2gN6abiXUNq1K+KMH6K0B9jipF/0DiWKPrCPTh0gAAAAASUVORK5CYII="/>
                         </a>
@@ -57,8 +57,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-lg-4 mt-sm-5 mt-md-4 mt-lg-3">
-                    <div class="card-deck h-100" style="border-radius: 1rem">
+                <div class="col-xs-12 col-sm-12 col-lg-4">
+                    <div class="card-deck" style="border-radius: 1rem">
                         <a class="img-card" href="{% url 'full-enhancement' %}">
                             <img src="https://cdn-icons-png.flaticon.com/512/1454/1454917.png"/>
                         </a>

@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5 text-center">
 
         {% for image in images %}
         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12 thumb">
@@ -23,7 +23,35 @@
 
             </div>
         </div>
+
+
+        {% empty %}
+        <div>
+            <h1 class="rainbow-text" style="margin-top: 5vh;">Seems like You are new here :( There are no images yet!</h1>
+        </div>
         {% endfor %}
+        <div class="row w-100 align-items-end justify-content-center">
+            <div class="col-12 ">
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </div>
+        </div>
+
     </div>
 </div>
 

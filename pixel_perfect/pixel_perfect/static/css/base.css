@@ -4,14 +4,14 @@ body {
 }
 
 hr.style-seven {
-    overflow: visible; /* For IE */
+    overflow: visible;
     height: 30px;
     border-style: solid;
     border-color: black;
     border-width: 1px 0 0 0;
     border-radius: 20px;
 }
-hr.style-seven:before { /* Not really supposed to work, but does */
+hr.style-seven:before {
     display: block;
     content: "";
     height: 30px;
@@ -73,7 +73,7 @@ nav .navbar-nav li a:hover {
 
 		}
 		div.juxtapose {
-	width: 80%;
+	width: 100vh;
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -421,9 +421,6 @@ a.jx-knightlab:focus span.juxtapose-name{
 
 html,
 body {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
-  background: #FFF;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }

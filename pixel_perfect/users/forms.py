@@ -9,11 +9,21 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ["username", "email", "password1", "password2"]
+
+    def __init__(self, *args, **kwargs):
+        super(UserRegisterForm, self).__init__(*args, **kwargs)
+
+        for fieldname in ["username", "email", "password1", "password2"]:
+            self.fields[fieldname].help_text = None
 
     def clean(self):
-        email = self.cleaned_data.get('email')
+        email = self.cleaned_data.get("email")
         if User.objects.filter(email=email).exists():
-            raise forms.ValidationError(mark_safe(f"An account with email address {email} already exists. <br>"
-                                                  f"Please login using this email or choose different email address."))
+            raise forms.ValidationError(
+                mark_safe(
+                    f"An account with email address {email} already exists. <br>"
+                    f"Please login using this email or choose different email address."
+                )
+            )
         return self.cleaned_data

@@ -36,6 +36,16 @@ class UpscaleImagesForm(ModelForm):
         required=False,
     )
 
+    def clean(self):
+        if not self.img_path:
+            raise ValidationError("No image!")
+        else:
+            w, h = get_image_dimensions(self.img_path)
+            if w != 200:
+                raise ValidationError("The image is %i pixel wide. It's supposed to be 200px" % w)
+            if h != 200:
+                raise ValidationError("The image is %i pixel high. It's supposed to be 200px" % h)
+
 
 class EnhanceImagesForm(ModelForm):
     image_type = forms.ChoiceField(

@@ -1,16 +1,21 @@
- function disableField() {
-      const invalidForm = document.querySelector('form:invalid');
-      const submitBtn = document.getElementById('submit');
-      if (invalidForm) {
-        submitBtn.setAttribute('disabled', true);
-      } else {
-        submitBtn.disabled = false;
-      }
-    }
+const radio_btns = document.querySelectorAll('label:has(input[type="radio"])');
+const img_input = document.getElementById('id_img_path')
 
-    disableField();
+function disableField() {
+    const invalidForm = document.querySelector('form:invalid');
+    const submitBtn = document.getElementById('submit');
 
-    const inputs = document.getElementsByTagName("input");
-    for (let input of inputs) {
-      input.addEventListener('change', disableField);
+    if (resultBtn.hasAttribute('disabled')){
+        if (invalidForm) {
+        submitBtn.disabled = true;
+        } else {
+           submitBtn.disabled = false;
+        }
     }
+}
+
+img_input.addEventListener('change', disableField);
+
+radio_btns.forEach((btn) => {
+    btn.addEventListener('change', disableField);
+});

@@ -1,4 +1,6 @@
+import datetime
 import os
+from datetime import date
 from pathlib import Path
 
 import google.oauth2.credentials
@@ -34,8 +36,14 @@ class UpscaleImageView(LoginRequiredMixin, View):
             "quality_factor": request.POST.get("compress_q_factor"),
             "enhance_after": False,
         }
+        from django.core.exceptions import ValidationError
 
-        upscaled_image = ImageManager.upscale_image(**upscale_params)
+        try:
+            upscaled_image = ImageManager.upscale_image(**upscale_params)
+        except ValidationError as e:
+            print(e)
+            return {"src": None, "img_id": None}
+
         image_name = upscaled_image.split("\\")[-1]
 
         img_path = os.path.join("/upscaled_images/{}/{}".format(request.user.id, image_name))
@@ -44,7 +52,10 @@ class UpscaleImageView(LoginRequiredMixin, View):
 
         if not image_db:
             image_db = EnhancedImages(
-                img_owner=self.request.user, img_path=img_path, img_name=Path(upscaled_image).name
+                img_owner=self.request.user,
+                img_path=img_path,
+                img_name=Path(upscaled_image).name,
+                date_created=date.today(),
             )
         else:
             image_db.img_path = img_path
@@ -133,6 +144,8 @@ class ImagesListView(LoginRequiredMixin, ListView):
     model = EnhancedImages
     template_name = "images-list.html"
     context_object_name = "images"
+    paginate_by = 6
+    ordering = ["-date_created"]
 
     def get_queryset(self):
         return EnhancedImages.objects.filter(img_owner=self.request.user.id)

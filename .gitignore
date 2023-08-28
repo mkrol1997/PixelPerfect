@@ -3,7 +3,7 @@ virtualenv/
 pixel_perfect/pixel_perfect/__pycache__
 pixel_perfect/26534.jpg
 pixel_perfect/users/gdrive/__pycache__/
-pixel_perfect/client_secret.json
+client_secret.json
 pixel_perfect/pixel_perfect/static/background.jpg
 pixel_perfect/users/migrations/__pycache__/
 pixel_perfect/users/__pycache__/
@@ -12,4 +12,4 @@ pixel_perfect/images/migrations/__pycache__/
 pixel_perfect/media/
 image_processing/__pycache__/
 image_processing/models/enhance/
-
+FBCNN/__pycache__/

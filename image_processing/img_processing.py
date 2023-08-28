@@ -43,8 +43,8 @@ class ImgProcesses:
         upscaled_image = super_res.upsample(img)
 
         upscaled_image_name = f"{src_img_name}-{model}_x{scale}{img_extension}"
-
         upscaled_image_path = os.path.join(save_to_path, upscaled_image_name)
+
         cv2.imwrite(upscaled_image_path, upscaled_image)
 
         return upscaled_image_path
