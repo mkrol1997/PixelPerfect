@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/>
+    <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4" id="submit"
+           style="width:100%; border-radius: 40px;">
+</form>
+</body>
+</html>

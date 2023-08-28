@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./media:/app/media
+    ports:
+      - "8000:8000"
+
+  queue:
+    build: .
+    command: celery -A celery_imp.celery_conf:celery_obj worker -l INFO
+    volumes:
+      - ./media:/app/media
+  redis:
+    image: redis:7-alpine
