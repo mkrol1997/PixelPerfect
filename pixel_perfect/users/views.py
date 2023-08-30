@@ -31,7 +31,7 @@ class RedirectInvalidLoginView(RedirectView):
 
 
 class UserRegisterView(SuccessMessageMixin, CreateView):
-    template_name = "users/register.html"
+    template_name = "users/registration/register.html"
     form_class = UserRegisterForm
     success_message = "Your profile was created successfully"
 
@@ -60,7 +60,7 @@ class OAuth2GoogleDriveAccessCallbackView(View):
     def get(self, request):
         state = request.session["state"]
         flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-            "client_secret.json", scopes=["https://www.googleapis.com/auth/drive.file"], state=state
+            "../client_secret.json", scopes=["https://www.googleapis.com/auth/drive.file"], state=state
         )
 
         flow.redirect_uri = settings.GOOGLE_OAUTH_REDIRECT_URI

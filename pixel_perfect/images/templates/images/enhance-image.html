@@ -1,5 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'pixel_perfect/base.html' %}
 {% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'images/css/loading_spinner.css' %}">
+{% endblock %}
 
 {% block content %}
 
@@ -14,7 +18,7 @@
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputFile1" >Upload</span>
+                        <span class="input-group-text" id="inputFile1">Upload</span>
                     </div>
                     <div class="custom-file">
                         {{ form.img_path }}
@@ -23,44 +27,36 @@
 
                 </div>
 
-                <h2 class="heading text-center" style="margin: 50px 0;">2. Select upscale method:</h2>
+                <h2 class="heading text-center " style="margin: 50px 0;">2. Select type of the image:</h2>
 
                 <fieldset class="d-flex justify-content-center" style="margin: 5% 0 8%;">
-                    {% for radio in form.upscale_method %}
+                    {% for radio in form.image_type %}
                     <div class="radio-toolbar" style="display: inline">
                         {{ radio }}
                     </div>
                     {% endfor %}
                 </fieldset>
 
-                <h2 class="heading text-center" style="margin-bottom: 50px">3. Determine the scale :</h2>
+                <h2 class="heading text-center" style="margin-bottom: 50px">3. AI Enhance Factor:</h2>
 
-                <fieldset class="d-flex justify-content-center" style="margin: 5% 0;">
-                    {% for radio in form.upscale_size %}
-                    <div class="radio-toolbar " style="display: inline; margin: 0 10%;">
-                        {{ radio }}
-                    </div>
-                    {% endfor %}
-                </fieldset>
-                <div class="custom-control custom-switch">
-
-                {{ form.do_compress }}
-                    <label class="custom-control-label" for="id_do_compress" style="font-size: 1rem; color: #505050;">{{ form.do_compress.label }}</label>
-
-                </div>
-
-                {{ form.compress_q_factor }}
+                    {{ form.quality_factor }}
 
                 <br>
-
-                <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4" id="submit"
-                       style="width:100%; border-radius: 40px;">
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4"
+                       id="submit" style="width:47%; border-radius: 40px;" disabled>
+                <button type="button" class="btn btn-info btn-rounded mb-4" id="toggleModal"
+                        style="width:47%; border-radius: 40px;"
+                        data-toggle="modal" data-target="#imageWindowModal" disabled>
+                    See result
+                </button>
+            </div>
             </form>
         </div>
     </div>
 
 
-    <div class="modal fade" id="exampleModal1" tabindex="-1">
+    <div class="modal fade" id="imageWindowModal" tabindex="-1">
 
         <div class="modal-dialog modal-lg" role='document' id="image-modal">
             <div class="modal-content h-60">
@@ -74,7 +70,8 @@
                 </div>
             </div>
         </div>
-        <div class="loader text-center" id="loader">
+    <div id="loader" style="align-items: center;">
+        <div class="loader text-center">
             <div class="loading ml-auto mr-auto">
                 <span></span>
                 <span></span>
@@ -86,26 +83,21 @@
             </div>
         </div>
     </div>
+    </div>
 
-
-    {% include 'footer.html' %}
-
-    <script src="{% static 'js/fetch_image.js' %}"></script>
-    <script src="{% static 'js/form_validation.js' %}"></script>
-
+    <script src="{% static 'images/js/form_validation.js' %}"></script>
+    <script src="{% static 'images/js/fetch_image.js' %}"></script>
+    <script src="{% static 'images/js/img_validator.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
 
-
     <script type="application/javascript">
         $('input[type="file"]').change(function(e){
             var fileName = e.target.files[0].name;
             $('.custom-file-label').html(fileName);
-            document.getElementById('inputFile1').classList.add('gradient-background');
-        });
-
+            document.getElementById('inputFile1').classList.add('gradient-background')});
     </script>
 
 {% endblock %}

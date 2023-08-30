@@ -10,7 +10,7 @@ urlpatterns = (
         path("", include("users.urls")),
         path(
             "accounts/password/change/",
-            PasswordChangeView.as_view(template_name="users/base.html"),
+            PasswordChangeView.as_view(template_name="users/change_password.html"),
             name="account_change_password",
         ),
         path("accounts/", include("allauth.urls")),

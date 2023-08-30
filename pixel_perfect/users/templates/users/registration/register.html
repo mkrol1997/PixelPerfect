@@ -1,0 +1,24 @@
+{% extends 'pixel_perfect/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="d-flex align-items-center justify-content-center w-100">
+    <div class="container w-50">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group ">
+                <h1 class="border-bottom rainbow-text mb-4">Welcome to PixelPerfect world!</h1>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group w-25">
+                <button class="btn btn-outline-info btn-rounded" type="submit">Sign up!</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Have an account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
+            </small>
+        </div>
+    </div>
+        </div>
+{% endblock %}
