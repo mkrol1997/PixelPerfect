@@ -13,3 +13,6 @@ pixel_perfect/media/
 image_processing/__pycache__/
 image_processing/models/enhance/
 FBCNN/__pycache__/
+pixel_perfect/images/migrations/
+Dockerfile
+docker-compose.yml

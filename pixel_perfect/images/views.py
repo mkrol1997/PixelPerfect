@@ -24,7 +24,7 @@ class UpscaleImageView(LoginRequiredMixin, View):
 
     def get(self, request):
         form_class = UpscaleImagesForm
-        return render(request, "upscale-image.html", context={"form": form_class})
+        return render(request, "images/upscale-image.html", context={"form": form_class})
 
     def post(self, request):
         upscale_params = {
@@ -67,7 +67,7 @@ class UpscaleImageView(LoginRequiredMixin, View):
 class EnhanceImageView(LoginRequiredMixin, View):
     def get(self, request):
         form_class = EnhanceImagesForm
-        return render(request, template_name="enhance-image.html", context={"form": form_class})
+        return render(request, template_name="images/enhance-image.html", context={"form": form_class})
 
     def post(self, request):
         enhance_params = {
@@ -86,7 +86,10 @@ class EnhanceImageView(LoginRequiredMixin, View):
 
         if not image_db:
             image_db = EnhancedImages(
-                img_owner=self.request.user, img_path=img_path, img_name=Path(enhanced_image).name
+                img_owner=self.request.user,
+                img_path=img_path,
+                img_name=Path(enhanced_image).name,
+                date_created=date.today(),
             )
 
         else:
@@ -99,7 +102,7 @@ class EnhanceImageView(LoginRequiredMixin, View):
 class FullEnhancementView(LoginRequiredMixin, View):
     def get(self, request):
         form_class = FullEnhancementForm
-        return render(request, template_name="total-enhancement-image.html", context={"form": form_class})
+        return render(request, template_name="images/total-enhancement-image.html", context={"form": form_class})
 
     def post(self, request):
         upscale_params = {
@@ -130,7 +133,10 @@ class FullEnhancementView(LoginRequiredMixin, View):
 
         if not image_db:
             image_db = EnhancedImages(
-                img_owner=self.request.user, img_path=img_path, img_name=Path(enhanced_image).name
+                img_owner=self.request.user,
+                img_path=img_path,
+                img_name=Path(enhanced_image).name,
+                date_created=date.today(),
             )
 
         else:
@@ -142,7 +148,7 @@ class FullEnhancementView(LoginRequiredMixin, View):
 
 class ImagesListView(LoginRequiredMixin, ListView):
     model = EnhancedImages
-    template_name = "images-list.html"
+    template_name = "images/images-list.html"
     context_object_name = "images"
     paginate_by = 6
     ordering = ["-date_created"]

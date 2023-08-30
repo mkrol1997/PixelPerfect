@@ -16,7 +16,7 @@ class ImageValidator(object):
         self.size = size
         self.width = width
         self.height = height
-        print((self.size, self.width, self.height), flush=True)
+
         if messages is not None and isinstance(messages, Mapping):
             self.messages = messages
 

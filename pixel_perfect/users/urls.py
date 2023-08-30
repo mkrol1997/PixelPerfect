@@ -27,22 +27,26 @@ urlpatterns = [
     path("authorize/", OAuth2GoogleDriveAccessView.as_view(), name="authorize"),
     path("oauth2callback/", OAuth2GoogleDriveAccessCallbackView.as_view(), name="callback"),
     path("accounts/social/signup/", RedirectInvalidLoginView.as_view(), name="signup_redirect"),
-    path("dashboard/", TemplateView.as_view(template_name="users/dashboard.html"), name="dashboard"),
+    path("dashboard/", TemplateView.as_view(template_name="pixel_perfect/dashboard.html"), name="dashboard"),
     path("contact/", ContactView.as_view(), name="contact"),
-    path("password_reset/", PasswordResetView.as_view(template_name="pw_reset/pw_reset.html"), name="password_reset"),
+    path(
+        "password_reset/",
+        PasswordResetView.as_view(template_name="users/registration/password_reset.html"),
+        name="password_reset",
+    ),
     path(
         "password_reset/done",
-        PasswordResetDoneView.as_view(template_name="pw_reset/pw_reset_done.html"),
+        PasswordResetDoneView.as_view(template_name="users/registration/password_reset_done.html"),
         name="password_reset_done",
     ),
     path(
         "password_reset/<uidb64>/<token>",
-        PasswordResetConfirmView.as_view(template_name="pw_reset/pw_reset_confirm.html"),
+        PasswordResetConfirmView.as_view(template_name="users/registration/password_reset_confirm.html"),
         name="password_reset_confirm",
     ),
     path(
         "password_reset/complete",
-        PasswordResetCompleteView.as_view(template_name="pw_reset/pw_reset_complete.html"),
+        PasswordResetCompleteView.as_view(template_name="users/registration/password_reset_complete.html"),
         name="password_reset_complete",
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

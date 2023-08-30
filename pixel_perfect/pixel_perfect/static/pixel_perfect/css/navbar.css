@@ -1,0 +1,21 @@
+nav .navbar-nav li a{
+  color: white !important;
+  }
+
+nav .navbar-nav li a:hover {
+    transform: scale(1.2);
+    transition: height 2s ease-in-out;
+    transition: .3s all ease-in-out;
+    color: #FF99CC !important;
+}
+
+.drop-itm:hover{
+    transform: scale(1.2);
+    transition: height 2s ease-in-out;
+    transition: .3s all ease-in-out;
+    color: yellow !important;
+}
+
+.dropdown:hover .dropdown-menu {
+      display: block;
+}

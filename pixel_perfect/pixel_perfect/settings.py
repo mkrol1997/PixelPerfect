@@ -168,8 +168,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
-    BASE_DIR / "users",
     BASE_DIR / "pixel_perfect/static/",
+    BASE_DIR / "images/static/",
+    BASE_DIR / "users/static/",
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")

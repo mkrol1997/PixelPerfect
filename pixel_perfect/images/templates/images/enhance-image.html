@@ -1,5 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'pixel_perfect/base.html' %}
 {% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'images/css/loading_spinner.css' %}">
+{% endblock %}
 
 {% block content %}
 
@@ -33,20 +37,26 @@
                     {% endfor %}
                 </fieldset>
 
-                <h2 class="heading text-center" style="margin-bottom: 50px">3. AI Enhance factor:</h2>
+                <h2 class="heading text-center" style="margin-bottom: 50px">3. AI Enhance Factor:</h2>
 
                     {{ form.quality_factor }}
 
                 <br>
-
-                <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4" id="submit"
-                       style="width:100%; border-radius: 40px;">
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4"
+                       id="submit" style="width:47%; border-radius: 40px;" disabled>
+                <button type="button" class="btn btn-info btn-rounded mb-4" id="toggleModal"
+                        style="width:47%; border-radius: 40px;"
+                        data-toggle="modal" data-target="#imageWindowModal" disabled>
+                    See result
+                </button>
+            </div>
             </form>
         </div>
     </div>
 
 
-    <div class="modal fade" id="exampleModal1" tabindex="-1">
+    <div class="modal fade" id="imageWindowModal" tabindex="-1">
 
         <div class="modal-dialog modal-lg" role='document' id="image-modal">
             <div class="modal-content h-60">
@@ -60,7 +70,8 @@
                 </div>
             </div>
         </div>
-        <div class="loader text-center" id="loader">
+    <div id="loader" style="align-items: center;">
+        <div class="loader text-center">
             <div class="loading ml-auto mr-auto">
                 <span></span>
                 <span></span>
@@ -72,9 +83,11 @@
             </div>
         </div>
     </div>
+    </div>
 
-    <script src="{% static 'js/fetch_image.js' %}"></script>
-    <script src="{% static 'js/form_validation.js' %}"></script>
+    <script src="{% static 'images/js/form_validation.js' %}"></script>
+    <script src="{% static 'images/js/fetch_image.js' %}"></script>
+    <script src="{% static 'images/js/img_validator.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
