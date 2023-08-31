@@ -181,3 +181,7 @@ h2.heading {
     margin: 0 0 0.3em;
   }
 }
+
+.asteriskField {
+    display: none;
+}

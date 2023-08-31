@@ -1,20 +1,85 @@
 {% extends 'pixel_perfect/base.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 
-    <div class="content-section">
-        <div class="media">
-            <div class="media-body">
-                <img class="rounded-circle" alt="avatar1" src="https://mdbcdn.b-cdn.net/img/new/avatars/9.webp" />
+<div class="content-section w-100 ml-5">
+    <div class="row align-items-center border-bottom pb-3 mt-5" style="width: 95%">
+        <div class="col-md-4 col-sm-12 mb-sm-5 d-flex justify-content-center">
+            <img class="rounded-circle shadow-4 px-auto" src="{{ user.profile.image.url }}" style="width: 250px;">
+        </div>
 
-                <h3 class="account-heading">Hi, {{ user.username|title   }}! </h3>
-                <h3>You’ve been with us since: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date_joined }}.</h3>
+        <div class="col-md-8 col-sm-12 d-flex-block">
+            <h2 class="text-dark">Hi, {{ user.username|title }}! </h2>
+            <h3 class="text-dark">You’ve been with us since: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ date_joined }}.</h3>
+            <br>
+            <h5 class="text-muted">Email: {{ user.email }}</h5>
+            <br>
+        </div>
+    </div>
+</div>
+<div class="row ml-5 my-5">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-md-12 col-xs-6 d-block">
+            {{ user_form|crispy }}
+        </div>
+        <div class="col-12 d-block">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                    {{ profile_form }}
+                    <label class="custom-file-label" for="id_image">Choose file</label>
+                </div>
+
+            </div>
+            <button class="btn btn-outline-info" type="submit">Update</button>
+            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#profileDeleteModal"
+                    style="float: right">Delete Account
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="profileDeleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">Please confirm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                All your images will be deleted permanently!
                 <br>
-                <p class="txt-secondary">Email: {{ user.email }}</p>
-                <form >
-                    <input type="submit" value="Save to Google Drive"/>
+                Would you like to continue?
+            </div>
+            <div class="modal-footer">
+                <form method="POST" action="{% url 'delete_profile' %}">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger" value="Confirm">
                 </form>
-                <br>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
             </div>
         </div>
     </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+        $('input[type="file"]').change(function(e){
+            var fileName = e.target.files[0].name;
+            $('.custom-file-label').html(fileName);
+            });
+
+</script>
+
 {% endblock %}
