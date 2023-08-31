@@ -4,13 +4,30 @@ import google_auth_oauthlib
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from django.contrib.auth.views import TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import redirect, reverse
+from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404, redirect, reverse
+from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView
 from django.views.generic.base import RedirectView
-from users.forms import UserRegisterForm
+from django.views.generic.edit import DeleteView, FormView
+from users.forms import ContactForm, ProfileUpdateForm, UserRegisterForm, UserUpdateForm
+
+
+class DeleteUserView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = User
+    success_url = reverse_lazy("login")
+    success_message = "Your account has been deleted."
+
+    def get_object(self, queryset=None):
+        return self.model.objects.get(pk=self.request.user.pk)
+
+    def delete(self, request, *args, **kwargs):
+        messages.info(self.request, self.success_message)
+        return super(DeleteUserView, self).delete(request, *args, **kwargs)
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
@@ -18,8 +35,24 @@ class ProfileView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        user = get_object_or_404(User, pk=self.request.user.pk)
         context["date_joined"] = self.request.user.date_joined.strftime("%m/%d/%Y")
+        context["user_form"] = UserUpdateForm(instance=user)
+        context["profile_form"] = ProfileUpdateForm(instance=user.profile)
         return context
+
+    def post(self, request, *args, **kwargs):
+        user_form = UserUpdateForm(instance=request.user, data=self.request.POST)
+        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, "Your profile has been updated!")
+            return redirect("profile")
+
+        messages.error(request, "Something gone wrong. Try again!")
+        return redirect("profile")
 
 
 class RedirectInvalidLoginView(RedirectView):
@@ -83,5 +116,17 @@ class OAuth2GoogleDriveAccessCallbackView(View):
         return redirect(reverse("upload", kwargs={"pk": request.session.get("img_id")}))
 
 
-class ContactView(TemplateView):
+class ContactView(FormView):
     template_name = "users/contact.html"
+    form_class = ContactForm
+    success_url = reverse_lazy("contact")
+    success_message = "Thank you for your feedback! Message sent successfully"
+
+    def form_valid(self, form):
+        send_mail(
+            subject=form.cleaned_data.get("subject"),
+            from_email=None,
+            recipient_list=["emailziutka1@gmail.com"],
+            message=f'From: {form.cleaned_data.get("email")}\nMessage: {form.cleaned_data.get("message")}',
+        )
+        return super(ContactView, self).form_valid(form)

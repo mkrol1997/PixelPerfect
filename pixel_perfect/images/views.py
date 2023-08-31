@@ -1,4 +1,3 @@
-import datetime
 import os
 from datetime import date
 from pathlib import Path
@@ -7,9 +6,12 @@ import google.oauth2.credentials
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.http import FileResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic.edit import DeleteView
 from django.views.generic.list import ListView
 from images.forms import EnhanceImagesForm, FullEnhancementForm, UpscaleImagesForm
 from images.models import EnhancedImages
@@ -41,7 +43,6 @@ class UpscaleImageView(LoginRequiredMixin, View):
         try:
             upscaled_image = ImageManager.upscale_image(**upscale_params)
         except ValidationError as e:
-            print(e)
             return {"src": None, "img_id": None}
 
         image_name = upscaled_image.split("\\")[-1]
@@ -96,7 +97,7 @@ class EnhanceImageView(LoginRequiredMixin, View):
             image_db.img_path = img_path
 
         image_db.save()
-        return JsonResponse({"src": image_db.img_path.url, "img_id": image_db.id, "upload_redirect": ""})
+        return JsonResponse({"src": image_db.img_path.url, "img_id": image_db.id})
 
 
 class FullEnhancementView(LoginRequiredMixin, View):
@@ -146,7 +147,7 @@ class FullEnhancementView(LoginRequiredMixin, View):
         return JsonResponse({"src": image_db.img_path.url, "img_id": image_db.id, "upload_redirect": ""})
 
 
-class ImagesListView(LoginRequiredMixin, ListView):
+class ImageGalleryView(LoginRequiredMixin, ListView):
     model = EnhancedImages
     template_name = "images/images-list.html"
     context_object_name = "images"
@@ -157,7 +158,20 @@ class ImagesListView(LoginRequiredMixin, ListView):
         return EnhancedImages.objects.filter(img_owner=self.request.user.id)
 
 
-class ImageUploadView(LoginRequiredMixin, View):
+class DeleteImageView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = EnhancedImages
+    success_url = reverse_lazy("images-list")
+    success_message = "Image has been deleted successfully."
+
+    def get_object(self, queryset=None):
+        return EnhancedImages.objects.get(pk=self.request.GET.get("img_id"))
+
+    def delete(self, request, *args, **kwargs):
+        messages.info(self.request, self.success_message)
+        return super(DeleteImageView, self).delete(request, *args, **kwargs)
+
+
+class GoogleDriveUploadView(LoginRequiredMixin, View):
     def get(self, request, pk):
         image_db = get_object_or_404(EnhancedImages, pk=pk, img_owner=request.user.id)
 
@@ -187,7 +201,7 @@ class ImageUploadView(LoginRequiredMixin, View):
         return redirect(reverse("images-list"))
 
 
-class ImageSaveView(LoginRequiredMixin, View):
+class DownloadImageView(LoginRequiredMixin, View):
     def get(self, request, pk):
         image_db = get_object_or_404(EnhancedImages, pk=pk, img_owner=request.user.id)
         img_abs_url = str(settings.BASE_DIR) + image_db.img_path.url

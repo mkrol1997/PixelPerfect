@@ -16,3 +16,4 @@ FBCNN/__pycache__/
 pixel_perfect/images/migrations/
 Dockerfile
 docker-compose.yml
+pixel_perfect/users/migrations/
