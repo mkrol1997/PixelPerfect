@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import (
-    LoginView,
     LogoutView,
     PasswordResetCompleteView,
     PasswordResetConfirmView,
@@ -12,6 +11,7 @@ from django.contrib.auth.views import (
 from django.urls import path
 from users.views import (
     ContactView,
+    CustomLoginView,
     DeleteUserView,
     OAuth2GoogleDriveAccessCallbackView,
     OAuth2GoogleDriveAccessView,
@@ -21,7 +21,7 @@ from users.views import (
 )
 
 urlpatterns = [
-    path("", LoginView.as_view(template_name="users/login.html", redirect_authenticated_user=True), name="login"),
+    path("", CustomLoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("profile/", ProfileView.as_view(), name="profile"),
     path("delete/profile/", DeleteUserView.as_view(), name="delete_profile"),

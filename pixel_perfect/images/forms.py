@@ -1,12 +1,16 @@
 from django import forms
-from django.forms import ModelForm
-from images.models import EnhancedImages
+from django.core.validators import FileExtensionValidator
+
+from .validators import ImageValidator
 
 
-class UpscaleImagesForm(ModelForm):
-    class Meta:
-        model = EnhancedImages
-        fields = ["img_path"]
+class UpscaleImagesForm(forms.Form):
+    img_path = forms.ImageField(
+        validators=[
+            ImageValidator(size=3145728, width=2400, height=1440),
+            FileExtensionValidator(["jpg", "jpeg", "png"]),
+        ]
+    )
 
     upscale_method = forms.ChoiceField(
         widget=forms.RadioSelect(attrs={"class": "form-check form-check-inline radiobtn"}),
@@ -32,15 +36,13 @@ class UpscaleImagesForm(ModelForm):
     )
 
 
-class EnhanceImagesForm(ModelForm):
-    class Meta:
-        model = EnhancedImages
-        fields = ["img_path", "image_type", "quality_factor"]
-        labels = {
-            "img_path": "",
-            "image_type": "",
-            "quality_factor": "",
-        }
+class EnhanceImagesForm(forms.Form):
+    img_path = forms.ImageField(
+        validators=[
+            ImageValidator(size=3145728, width=2400, height=1440),
+            FileExtensionValidator(["jpg", "jpeg", "png"]),
+        ]
+    )
 
     image_type = forms.ChoiceField(
         widget=forms.RadioSelect(attrs={"class": "form-check form-check-inline"}),
@@ -53,7 +55,3 @@ class EnhanceImagesForm(ModelForm):
         ),
         required=False,
     )
-
-
-class FullEnhancementForm(EnhanceImagesForm, UpscaleImagesForm):
-    ...
