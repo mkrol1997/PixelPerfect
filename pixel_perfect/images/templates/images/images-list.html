@@ -2,94 +2,101 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'images/css/gallery.css' %}">
+<link rel="stylesheet" href="{% static 'images/css/gallery.css' %}">
 {% endblock %}
 
 {% block content %}
 
-    <div class="container">
-        <div class="row mt-5 text-center">
+<div class="container">
+    <div class="row mt-5 text-center">
 
-            {% for image in images %}
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 thumb">
-                <div class="hovereffect shadow">
+        {% for image in images %}
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 thumb">
+            <div class="hovereffect shadow">
 
-                    <img class="zoom img-fluid img-responsive" src="{{ image.img_path.url }}" alt="">
-                    <div class="overlay">
-                        <h2>{{ image.img_name }}</h2>
-                        <button class="info"
-                           onclick="gallery_modal(
+                <img class="zoom img-fluid img-responsive" src="{{ image.img_path.url }}" alt="">
+                <div class="overlay">
+                    <h2>{{ image.img_name }}</h2>
+                    <button class="info"
+                            onclick="gallery_modal(
                                img_src='{{ image.img_path.url }}',
                                img_title='{{ image.img_name | upper }}',
                                img_dwnld_url = '{{ image.id }}')"
-                        >Details</button>
-                    </div>
-
+                    >Details
+                    </button>
                 </div>
             </div>
+        </div>
 
 
-            {% empty %}
-            <div class="d-block justify-content-center align-items-center text-center w-100">
-                <div class="container justify-content-center w-100">
-                    <img src="{% static 'users/assets/images/no_images.jpg' %}" style="width: 25vw;">
-                </div>
-                <div class="container text-center">
-                    <h1 class="rainbow-text" style="margin-top: 5vh; font-size: 2rem">Seems like You are new here :( There are no images yet!</h1>
-                </div>
+        {% empty %}
+        <div class="d-block justify-content-center align-items-center text-center w-100">
+            <div class="container justify-content-center w-100">
+                <img src="{% static 'users/assets/images/no_images.jpg' %}" style="width: 25vw;">
             </div>
-            {% endfor %}
+            <div class="container text-center">
+                <h1 class="rainbow-text" style="margin-top: 5vh; font-size: 2rem">Seems like You are new here :( There
+                    are no images yet!</h1>
+            </div>
+        </div>
+        {% endfor %}
 
-            {% if page_obj.paginator.num_pages > 1 %}
-            <div class="row w-100 align-items-end justify-content-center">
-                <div class="col-12 ">
+        {% if page_obj.paginator.num_pages > 1 %}
+        <div class="row w-100 align-items-end justify-content-center">
+            <div class="col-12 ">
                 {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
+                <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
                 {% endif %}
 
                 {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                        <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
-                    {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
-                        <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
-                    {% endif %}
+                {% if page_obj.number == num %}
+                <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                <a class="btn btn-outline-info mb-4" href="?page={{num}}">{{ num }}</a>
+                {% endif %}
                 {% endfor %}
 
                 {% if page_obj.has_next %}
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
                 {% endif %}
             </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1">
+
+    <div class="modal-dialog modal-lg" role='document' id="image-modal">
+        <div class="d-flex w-100 justify-content-center align-items-center">
+            <h5 class="rainbow-text" id="modal-title"></h5>
+        </div>
+        <div class="modal-content h-60">
+            <div class="d-flex align-items-center bg-dark hover-zoom">
+                <img id="image-gallery" src="" class="img-fluid mr-auto ml-auto" style="height: 60vh">
             </div>
-            {% endif %}
+            <div class="modal-footer bg-dark d-flex justify-content-start">
+                <div class="row">
+
+                    <button type="button" class="btn btn-secondary mr-auto d-inline" data-dismiss="modal">Close</button>
+                    <form method="POST" action="#" id="imgDeleteForm">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger ml-2 mr-auto d-inline">Delete</button>
+                    </form>
+
+                </div>
+
+                <div class="ml-auto">
+                    <a href="#" type="button" class="btn btn-info ml-auto" id="download">Download</a>
+                    <a href="#" type="button" class="btn btn-primary" id="saveGDrive"><img class="mr-2" src="{% static 'users/assets/images/g_drive_icon.png' %}" style="width: 15%;">Google Drive</a>
+                </div>
+
+            </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" tabindex="-1">
-
-        <div class="modal-dialog modal-lg" role='document' id="image-modal">
-            <div class="d-flex w-100 justify-content-center align-items-center">
-                <h5 class="rainbow-text" id="modal-title"></h5>
-            </div>
-            <div class="modal-content h-60">
-                <div class="d-flex align-items-center bg-dark hover-zoom">
-                    <img id="image-gallery" src="" class="img-fluid mr-auto ml-auto" style="height: 60vh">
-                </div>
-                <div class="modal-footer bg-dark d-flex justify-content-start">
-                    <div>
-                        <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
-                        <a href="#" type="button" class="btn btn-danger mr-auto" id="delete">Delete</a>
-                    </div>
-
-                    <div class="ml-auto">
-                        <a href="#" type="button" class="btn btn-secondary ml-auto ml-3" id="download">Download</a>
-                        <a href="#" type="button" class="btn btn-primary" id="saveGDrive">Google Drive</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="{% static 'images/js/gallery_modal.js' %}"></script>
+<script src="{% static 'images/js/gallery_modal.js' %}"></script>
 {% endblock %}

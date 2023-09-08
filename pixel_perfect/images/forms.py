@@ -1,17 +1,16 @@
-import os.path
-
-from crispy_forms.bootstrap import InlineRadios
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Column, Div, Field, Layout, Row, Submit
 from django import forms
-from django.forms import ModelForm
-from images.models import EnhancedImages
+from django.core.validators import FileExtensionValidator
+
+from .validators import ImageValidator
 
 
-class UpscaleImagesForm(ModelForm):
-    class Meta:
-        model = EnhancedImages
-        fields = ["img_path"]
+class UpscaleImagesForm(forms.Form):
+    img_path = forms.ImageField(
+        validators=[
+            ImageValidator(size=3145728, width=2400, height=1440),
+            FileExtensionValidator(["jpg", "jpeg", "png"]),
+        ]
+    )
 
     upscale_method = forms.ChoiceField(
         widget=forms.RadioSelect(attrs={"class": "form-check form-check-inline radiobtn"}),
@@ -36,18 +35,15 @@ class UpscaleImagesForm(ModelForm):
         required=False,
     )
 
-    def clean(self):
-        if not self.img_path:
-            raise ValidationError("No image!")
-        else:
-            w, h = get_image_dimensions(self.img_path)
-            if w != 200:
-                raise ValidationError("The image is %i pixel wide. It's supposed to be 200px" % w)
-            if h != 200:
-                raise ValidationError("The image is %i pixel high. It's supposed to be 200px" % h)
 
+class EnhanceImagesForm(forms.Form):
+    img_path = forms.ImageField(
+        validators=[
+            ImageValidator(size=3145728, width=2400, height=1440),
+            FileExtensionValidator(["jpg", "jpeg", "png"]),
+        ]
+    )
 
-class EnhanceImagesForm(ModelForm):
     image_type = forms.ChoiceField(
         widget=forms.RadioSelect(attrs={"class": "form-check form-check-inline"}),
         choices=[("color", "RGB IMAGE"), ("color_real", "REAL WORLD RGB IMAGE"), ("greyscale", "GREYSCALE")],
@@ -59,16 +55,3 @@ class EnhanceImagesForm(ModelForm):
         ),
         required=False,
     )
-
-    class Meta:
-        model = EnhancedImages
-        fields = ["img_path", "image_type", "quality_factor"]
-        labels = {
-            "img_path": "",
-            "image_type": "",
-            "quality_factor": "",
-        }
-
-
-class FullEnhancementForm(EnhanceImagesForm, UpscaleImagesForm):
-    ...

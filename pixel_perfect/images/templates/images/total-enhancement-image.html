@@ -7,6 +7,12 @@
 
 {% block content %}
 
+<div id="messageContainer" class="container-fluid mt-3" style="display: none">
+    <div id="message" class="alert alert-danger text-center center-block">
+
+    </div>
+</div>
+
 <div class="col-xl-12 d-flex justify-content-center">
 
 
@@ -21,7 +27,7 @@
                     <span class="input-group-text" id="inputFile1">Upload</span>
                 </div>
                 <div class="custom-file">
-                    {{ form.img_path }}
+                    {{ upscale_form.img_path }}
                     <label class="custom-file-label" for="id_img_path">Choose file</label>
                 </div>
 
@@ -30,7 +36,7 @@
             <h2 class="heading text-center" style="margin: 50px 0;">2. Select upscale method:</h2>
 
             <fieldset class="d-flex justify-content-center" style="margin: 5% 0 8%;">
-                {% for radio in form.upscale_method %}
+                {% for radio in upscale_form.upscale_method %}
                 <div class="radio-toolbar" style="display: inline">
                     {{ radio }}
                 </div>
@@ -40,7 +46,7 @@
             <h2 class="heading text-center" style="margin-bottom: 50px">3. Determine the scale :</h2>
 
             <fieldset class="d-flex justify-content-center" style="margin: 5% 0;">
-                {% for radio in form.upscale_size %}
+                {% for radio in upscale_form.upscale_size %}
                 <div class="radio-toolbar " style="display: inline; margin: 0 10%;">
                     {{ radio }}
                 </div>
@@ -48,18 +54,18 @@
             </fieldset>
             <div class="custom-control custom-switch mb-3">
 
-                {{ form.do_compress }}
+                {{ upscale_form.do_compress }}
                 <label class="custom-control-label" for="id_do_compress" style="font-size: 1rem; color: #505050;">
-                    {{form.do_compress.label }}</label>
+                    {{ upscale_form.do_compress.label }}</label>
 
             </div>
 
-            {{ form.compress_q_factor }}
+            {{ upscale_form.compress_q_factor }}
 
             <h2 class="heading text-center" style="margin: 50px 0;">4. Select type of the image:</h2>
 
             <fieldset class="d-flex justify-content-center" style="margin: 5% 0 8%;">
-                {% for radio in form.image_type %}
+                {% for radio in enhance_form.image_type %}
                 <div class="radio-toolbar" style="display: inline">
                     {{ radio }}
                 </div>
@@ -68,7 +74,7 @@
 
             <h2 class="heading text-center" style="margin-bottom: 50px">5. AI Enhance Factor:</h2>
 
-            {{ form.quality_factor }}
+            {{ enhance_form.quality_factor }}
             <br>
             <div class="d-flex justify-content-between">
                 <input type="submit" value="Process" onclick="show_modal()" class="btn btn-info btn-rounded mb-4"
@@ -93,8 +99,8 @@
             </div>
             <div class="modal-footer bg-dark">
                 <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
-                <a href="#" type="button" class="btn btn-secondary ml-auto" id="download">Download</a>
-                <a href="#" type="button" class="btn btn-primary" id="saveGDrive">GDrive</a>
+                    <a href="#" type="button" class="btn btn-info ml-auto" id="download">Download</a>
+                    <a href="#" type="button" class="btn btn-primary" id="saveGDrive">Google Drive</a>
             </div>
         </div>
     </div>
@@ -115,7 +121,6 @@
 
 <script src="{% static 'images/js/form_validation.js' %}"></script>
 <script src="{% static 'images/js/fetch_image.js' %}"></script>
-<script src="{% static 'images/js/img_validator.js' %}"></script>
 <script src="{% static 'images/js/radio_btn_update.js' %}"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
