@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 from django.contrib.messages import constants as messages
+from dotenv import find_dotenv, load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,14 +13,14 @@ sys.path.append(str(IMAGE_PROCESSING))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+load_dotenv(find_dotenv())
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-wa)au)%n359wb3s=@e=j(3=vsbwr@x*!e6q#%oi)(f$tk#jrwv"
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -46,6 +47,18 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
+
+GOOGLE_CLIENT_CONFIG = {
+    "web": {
+        "client_id": os.environ.get("CLIENT_ID"),
+        "project_id": os.environ.get("PROJECT_ID"),
+        "auth_uri": os.environ.get("AUTH_URI"),
+        "token_uri": os.environ.get("TOKEN_URI"),
+        "auth_provider_x509_cert_url": os.environ.get("AUTH_PROVIDER_X509_CERT_URL"),
+        "client_secret": os.environ.get("CLIENT_SECRET"),
+        "redirect_uris": ["http://localhost:8000", "http://localhost/accounts/google/login/callback"],
+    }
+}
 
 SITE_ID = 2
 
@@ -114,7 +127,6 @@ WSGI_APPLICATION = "pixel_perfect.wsgi.application"
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     "default": {
@@ -124,7 +136,6 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -143,7 +154,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
 
@@ -155,15 +165,14 @@ USE_TZ = True
 
 
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "emailziutka1@gmail.com"
-EMAIL_HOST_PASSWORD = "pevrzjtllsflwljm"
+EMAIL_HOST_USER = os.environ.get("EMAIL")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
 

@@ -7,6 +7,12 @@
 
 {% block content %}
 
+    <div id="messageContainer" class="container-fluid w-50 mt-3" style="display: none">
+        <div id="message" class="alert alert-danger text-center center-block">
+
+        </div>
+    </div>
+
     <div class="col-xl-12 d-flex justify-content-center">
 
 
@@ -65,8 +71,8 @@
                 </div>
                 <div class="modal-footer bg-dark">
                     <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
-                    <a href="#" type="button" class="btn btn-secondary ml-auto" id="download">Download</a>
-                    <a href="#" type="button" class="btn btn-primary" id="saveGDrive">GDrive</a>
+                    <a href="#" type="button" class="btn btn-info ml-auto" id="download">Download</a>
+                    <a href="#" type="button" class="btn btn-primary" id="saveGDrive">Google Drive</a>
                 </div>
             </div>
         </div>
@@ -87,7 +93,7 @@
 
     <script src="{% static 'images/js/form_validation.js' %}"></script>
     <script src="{% static 'images/js/fetch_image.js' %}"></script>
-    <script src="{% static 'images/js/img_validator.js' %}"></script>
+    <script src="{% static 'images/js/radio_btn_update.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
