@@ -67,18 +67,15 @@ ________
     * Python 3.9+
     * Docker Destop
   
-  1. Using Git BASH
-     ```bash
-    git clone https://github.com/mkrol1997/pixel-perfect
-```
+- Using Git BASH
     ```bash
     git clone https://github.com/mkrol1997/pixel-perfect
     ```
-  3. Using python shell
+- Using python shell
     ```bash
     docker-compose up --build
     ```
-  4. PixelPerfect Web App runs at:
-    ```
-     HTTP://[localhost/8000](http://localhost:8000/)http://localhost:8000/
-    ```
+- PixelPerfect Web App runs at:
+  ```
+   HTTP://[localhost/8000](http://localhost:8000/)http://localhost:8000/
+  ```
