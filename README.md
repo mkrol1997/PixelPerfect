@@ -17,9 +17,9 @@
 
 * [Description](#Description)
 * [Visual Examples](#Visual-Examples)
-* [Installation](#)
+* [Installation](#Installation-Guide)
 * [Usage](#)
-* [Citation](#)
+* [Citation](#Citation)
 * [License and Acknowledgement](#)
 ________
 Description
@@ -61,15 +61,13 @@ ________
 
 
 ________
-# Installation
+# Installation Guide
 
   ### Prerequisites
     * Python 3.9+
     * Git 
     * Docker Desktop
     * Docker-compose (Linux)
-  
-## Installation Guide
 
 1. **Clone the Repository:**
 
@@ -105,3 +103,9 @@ ________
 6. **Additional Configuration:**
 
     - To make sure all of the app features work correctly, it is essential to set all environmental variables listed in the .env file.
+
+
+________
+# Citation
+```plaintext
+Jiang, J. (Year). FBCNN: Convolutional Neural Network for Fine-Grained Text Classification. GitHub Repository. Retrieved from https://github.com/jiaxi-jiang/FBCNN
