@@ -9,14 +9,14 @@
 ![django version](https://img.shields.io/badge/Django-4.2.3-green.svg)
 ![celery version](https://img.shields.io/badge/celery-5.3.4-blue.svg)
 ![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg)
-![docker version](https://img.shields.io/badge/docker-darg-blue.svg) 
+![docker version](https://img.shields.io/badge/docker-darkblue.svg) 
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
 
 
 # Contents
 
 * [Description](#Description)
-* [Visual Examples](#)
+* [Visual Examples](#Visual-Examples)
 * [Installation](#)
 * [Usage](#)
 * [Citation](#)
@@ -56,4 +56,26 @@ Whether you're a professional photographer, a graphic designer, or someone looki
 Ready to elevate your images and streamline your image processing workflow? Sign up today or log in with your Google account to get started!
 
 ________
+# Visual Examples
 
+
+
+________
+# Installation
+
+  ### Prerequisites
+    * Python 3.9+
+    * Docker Destop
+  
+  1. Using Git BASH
+    ```bash
+    git clone https://github.com/mkrol1997/pixel-perfect
+    ```
+  2. Using python shell
+    ```bash
+    docker-compose up --build
+    ```
+  3. PixelPerfect Web App runs at:
+    ```
+     HTTP://[localhost/8000](http://localhost:8000/)http://localhost:8000/
+    ```
