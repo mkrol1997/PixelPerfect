@@ -1,4 +1,4 @@
-<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/logo.png" width="600px" align="center"/>
+<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/logo.png" width="600px" style="align=center"/>
 
 # [PixelPerfect, Image Enhancement and Upscaling Web App, v1.0, release: 09/2023](https://github.com/mkrol1997/pixel-perfect/)
 [![GitHub Stars](https://img.shields.io/github/stars/mkrol1997/pixel-perfect?style=social)](https://github.com/mkrol1997/pixel-perfect/)
