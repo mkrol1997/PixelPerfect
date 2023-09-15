@@ -1,4 +1,4 @@
-  ##[PixelPerfect, 2023](https://github.com/mkrol1997/pixel-perfect/)
+  ## [PixelPerfect, 2023](https://github.com/mkrol1997/pixel-perfect/)
 [![GitHub Stars](https://img.shields.io/github/stars/mkrol1997/pixel-perfect?style=social)](https://github.com/mkrol1997/pixel-perfect/)
 [![download](https://img.shields.io/github/downloads/jiaxi-jiang/FBCNN/total.svg)](https://github.com/mkrol1997/pixel-perfect/releases)
 ![python version](https://img.shields.io/badge/python-3.11-yellow.svg)
