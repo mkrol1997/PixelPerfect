@@ -65,40 +65,36 @@ ________
 
   ### Prerequisites
     * Python 3.9+
-    * Docker Destop
+    * Git 
+    * Docker Desktop
+    * Docker-compose (Linux)
   
 ## Installation Guide
 
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
+    git clone https://github.com/mkrol1997/pixel-perfect
     ```
-
-    Replace `your-username` with your GitHub username and `your-repo` with the name of your repository.
 
 2. **Navigate to the Project Directory:**
 
     ```bash
-    cd your-repo
+    cd pixel-perfect
     ```
-
-    Replace `your-repo` with the actual name of your repository.
 
 3. **Build and Start Containers:**
 
-    - Make sure you have Docker and Docker Compose installed.
+    - Make sure you have Docker and Docker Compose installed and running.
     
     ```bash
-    docker-compose up -d
+    docker-compose up --build
     ```
-
-    This command runs the containers in detached mode. If you want to see the logs, omit the `-d` flag.
 
 4. **Access the App:**
 
     - Once the containers are running, access the app in your web browser.
-    - Open your browser and enter the app's URL, which may be something like `http://localhost:port`, depending on your app's configuration.
+    - Open your browser and enter the app's URL, which runs at `http://localhost:8000`.
 
 5. **Shutdown and Cleanup:**
 
@@ -106,12 +102,6 @@ ________
     docker-compose down
     ```
 
-    This will stop and remove the containers while preserving your app's data.
-
 6. **Additional Configuration:**
 
-    - If your app requires additional configuration, such as environment variables or specific settings, make sure to provide instructions for these in your README or a separate configuration file.
-
-7. **Troubleshooting:**
-
-    - If you encounter issues during the installation process, consult the troubleshooting section in your README or provide information on how users can seek help or report problems.
+    - To make sure all of the app features work correctly, it is essential to set all environmental variables listed in the .env file.
