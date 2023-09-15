@@ -1,6 +1,6 @@
 <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/logo.png" width="600px" style="align=center"/>
 
-# [PixelPerfect, Image Enhancement and Upscaling Web App, v1.0, release: 09/2023](https://github.com/mkrol1997/pixel-perfect/)
+# [PixelPerfect - Image Enhancement and Upscaling Web App](https://github.com/mkrol1997/pixel-perfect/)
 [![GitHub Stars](https://img.shields.io/github/stars/mkrol1997/pixel-perfect?style=social)](https://github.com/mkrol1997/pixel-perfect/)
 [![download](https://img.shields.io/github/downloads/mkrol1997/pixel-perfect/total.svg)](https://github.com/mkrol1997/pixel-perfect/releases)
 ![python version](https://img.shields.io/badge/python-3.11-yellow.svg)
@@ -24,17 +24,17 @@ Contents
 Description
 ----------
 
-Welcome to the Image Enhancement and Upscaling Web App, a versatile tool that empowers users to transform their images with ease. Whether you're dealing with low-resolution photos, noisy images, or compression artifacts, our web app offers a comprehensive solution to enhance, upscale, and refine your visuals.
+Welcome to the PixelPerfect Web App, a versatile tool that empowers users to easily transform their images. Whether you're dealing with low-resolution photos, noisy images, or compression artefacts, our web app offers a comprehensive solution to enhance, upscale, and refine your visuals.
 
 ## Key Features:
 
 ### 1. Image Upscaling
 
-Do your low-resolution images lack the detail and clarity you need? Our state-of-the-art upscaling technology allows you to increase the size of your images without compromising quality. Perfect for enhancing old photographs, small thumbnails, or web graphics, this feature breathes new life into your visuals.
+Do your low-resolution images lack the detail and clarity you need? PixelPerfect allows you to increase the resolution of your images without compromising quality. Perfect for enhancing old photographs, small thumbnails, or web graphics, this feature breathes new life into your visuals.
 
 ### 2. Artifact Removal
 
-Eliminate unwanted image artifacts that can detract from the overall quality of your pictures. Our app employs advanced algorithms to automatically detect and remove noise, compression artifacts, and distortions, ensuring that your images look their best.
+Eliminate unwanted image artefacts that can detract from the overall quality of your pictures. Our app employs advanced algorithms to automatically detect and remove noise, compression artefacts, and distortions, ensuring that your images look their best.
 
 ### 3. Save Locally or to Google Drive
 
@@ -50,10 +50,9 @@ Experience enhanced convenience by creating a dedicated user account within the 
 
 Simplify the registration and login process with our seamless Google OAuth2 integration. You can create an account or log in using your Google credentials, ensuring a secure and frictionless user experience.
 
-Whether you're a professional photographer, a graphic designer, or simply someone looking to improve their personal photos, our Image Enhancement and Upscaling Web App provides the tools you need to transform your images into sharper, more detailed visuals effortlessly.
+Whether you're a professional photographer, a graphic designer, or someone looking to improve their personal photos, PixelPerfect provides the tools you need to transform your images into sharper, more detailed visuals effortlessly.
 
 Ready to elevate your images and streamline your image processing workflow? Sign up today or log in with your Google account to get started!
 
 ---
 
-Feel free to use this detailed description in your GitHub README to provide potential users with a comprehensive overview of your web app's capabilities and benefits.
