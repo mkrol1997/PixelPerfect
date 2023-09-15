@@ -21,7 +21,6 @@ Contents
 
 Description
 ----------
-# 
 
 Welcome to the Image Enhancement and Upscaling Web App, a versatile tool that empowers users to transform their images with ease. Whether you're dealing with low-resolution photos, noisy images, or compression artifacts, our web app offers a comprehensive solution to enhance, upscale, and refine your visuals.
 
