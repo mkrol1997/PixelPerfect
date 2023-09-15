@@ -108,7 +108,7 @@ ________
 ________
 # Citation
 
+``` # FBCNN
 ```plaintext
-### FBCNN
 Jiang, J. (2023). FBCNN: Convolutional Neural Network for Fine-Grained Text Classification.
 Source code retrieved from: https://github.com/jiaxi-jiang/FBCNN
