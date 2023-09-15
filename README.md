@@ -8,7 +8,8 @@
 ![python version](https://img.shields.io/badge/python-3.11-yellow.svg)
 ![django version](https://img.shields.io/badge/Django-4.2.3-green.svg)
 ![celery version](https://img.shields.io/badge/celery-5.3.4-blue.svg)
-![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg) 
+![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg)
+![docker version](https://img.shields.io/badge/docker-darg-blue.svg) 
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
 
 
