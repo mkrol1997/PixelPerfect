@@ -107,5 +107,8 @@ ________
 
 ________
 # Citation
+
 ```plaintext
-Jiang, J. (Year). FBCNN: Convolutional Neural Network for Fine-Grained Text Classification. GitHub Repository. Retrieved from https://github.com/jiaxi-jiang/FBCNN
+### FBCNN
+Jiang, J. (2023). FBCNN: Convolutional Neural Network for Fine-Grained Text Classification.
+Source code retrieved from: https://github.com/jiaxi-jiang/FBCNN
