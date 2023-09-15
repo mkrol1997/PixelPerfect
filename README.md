@@ -10,11 +10,9 @@
 ![celery version](https://img.shields.io/badge/celery-5.3.4-blue.svg)
 ![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg) 
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
-#
-________
 
-Contents
-----------
+
+# Contents
 
 * [Description](#Description)
 * [Visual Examples](#)
@@ -22,7 +20,7 @@ Contents
 * [Usage](#)
 * [Citation](#)
 * [License and Acknowledgement](#)
-
+________
 Description
 ----------
 
@@ -56,5 +54,5 @@ Whether you're a professional photographer, a graphic designer, or someone looki
 
 Ready to elevate your images and streamline your image processing workflow? Sign up today or log in with your Google account to get started!
 
----
+________
 
