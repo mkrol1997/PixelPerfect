@@ -59,12 +59,12 @@ ________
 # Visual Examples
 
 <p align="center">
-  [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" alt="Image 1" height="250px"/>](https://imgsli.com/MjA2Mjcz)
-  <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" alt="Image 2" height="250px"/>
+  [![Sample 1](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png)](https://imgsli.com/MjA2Mjcz)
+  [![Sample 2](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png)](https://imgsli.com/MjA2Mjcy)
 </p>
 <p align="center">
-  <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" alt="Image 3" height="250px"/>
-  <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" alt="Image 4" height="250px"/>
+  [![Sample 3](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png)](https://imgsli.com/MjA2Mjcw)
+  [![Sample 4](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png)](https://imgsli.com/MjA2MjY3)
 </p>
 
 ________
