@@ -58,7 +58,9 @@ Ready to elevate your images and streamline your image processing workflow? Sign
 ________
 # Visual Examples
 
-
+|:---:|:---:|
+|[<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" width="400px"/>](https://imgsli.com/MjA2Mjcz) |[<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" width="400px"/>](https://imgsli.com/MjA2Mjcy)|
+|[<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" width="400px"/>](https://imgsli.com/MjA2Mjcw) |[<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" width="400px"/>](https://imgsli.com/MjA2MjY3)|
 
 ________
 # Installation Guide
