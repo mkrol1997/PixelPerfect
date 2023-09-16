@@ -107,37 +107,52 @@ ________
     - To make sure all of the app features work correctly, it is essential to set all environmental variables listed in the .env file.
 
 ________
-# Usage
+# Usage Instructions
 
 ## Image Upscaling
-  Image upscaling resizes old images, increasing their resolution by generating additional pixels.  
-  To make the functionality work properly make sure to:  
-    - Choose image input  
-    - Choose one of the four supported methods  
-      Resize scale x2, x3, x4:  
-      * ESPN  
-      * FSRN  
-      * EDSR (be aware this method takes more than compared to others)  
-      Resize scale x2, x4, x8:  
-      * LapSRN  
-    - Choose one of the available scales according to the upscale method  
-    > (Optional) It is possible to compress image quality after the upscaling process to reduce its size  
-    - Enable the switch button and choose the compression factor  
-    - Save image with ```Download``` button or save on Google Drive with ```Google Drive``` button  
+
+Image upscaling increases the resolution of old images by generating additional pixels.
+
+**To properly use this functionality, follow these steps:**
+
+1. Choose your image input.
+2. Select one of the four supported upscaling methods:
+
+   - **Resize Scale x2, x3, x4:**
+     - ESPN
+     - FSRN
+     - EDSR (Note: This method may take longer compared to others.)
+     
+   - **Resize Scale x2, x4, x8:**
+     - LapSRN
+
+3. Choose the desired scale according to the selected upscaling method.
+4. *(Optional)* You can compress the image quality after upscaling to reduce its size:
+   - Enable the switch button.
+   - Choose the compression factor.
+5. Save the image using the "Download" button or save it to Google Drive with the "Google Drive" button.
+
 ## Image Artefacts Removal
-  Image enhancement removes all artefacts from your picture. When selecting the enhancement factor, it's essential to consider that a lower factor will result in fewer artefacts being removed,       preserving more fine details within the image. Conversely, a higher factor will reduce image artefacts but may sacrifice some finer image details in the process.  
-   - Choose image input  
-   - Choose an image type from the available choices:  
-       * RGB image  
-       * Real-world RGB image  
-       * Greyscale image  
-   - Choose enhancement factor  
-   - Save image with ```Download``` button or save on Google Drive with ```Google Drive``` button  
+
+Image enhancement removes all artefacts from your picture. When choosing the enhancement factor, consider the trade-off between artefact removal and preserving fine image details.
+
+**To properly remove artefacts, follow these steps:**
+
+1. Choose your image input.
+2. Select an image type from the available choices:
+   - RGB image
+   - Real-world RGB image
+   - Greyscale image
+3. Choose the enhancement factor.
+4. Save the enhanced image using the "Download" button or save it to Google Drive with the "Google Drive" button.
 
 ## Image Full Enhancement
-  Full Enhancement includes image upscaling and artifacts removal. Follow the steps mentioned in:  
-    * [Image Upscaling](#Image-Upscaling)  
-    * [Image Artefacts Removal](#Image-Artefacts-Removal)  
+
+Full Enhancement combines image upscaling and artefacts removal.
+
+**To perform full enhancement, follow these steps:**
+
+1. Complete the steps for both "Image Upscaling" and "Image Artefacts Removal" sections mentioned above.
 ________
 # Citation
 
