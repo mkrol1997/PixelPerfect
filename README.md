@@ -59,12 +59,12 @@ ________
 # Visual Examples
 
 <p align="center">
-  |[<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) |
-  [![Sample 2](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png)](https://imgsli.com/MjA2Mjcy)
+  [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"/>](https://imgsli.com/MjA2Mjcz)
+  [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" height="250px"/>](https://imgsli.com/MjA2Mjcz)
 </p>
 <p align="center">
-  [![Sample 3](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png)](https://imgsli.com/MjA2Mjcw)
-  [![Sample 4](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png)](https://imgsli.com/MjA2MjY3)
+  [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" height="250px"/>](https://imgsli.com/MjA2Mjcz)
+  [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" height="250px"/>](https://imgsli.com/MjA2Mjcz)
 </p>
 
 ________
