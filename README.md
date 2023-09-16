@@ -7,10 +7,10 @@
 [![download](https://img.shields.io/github/downloads/mkrol1997/pixel-perfect/total.svg)](https://github.com/mkrol1997/pixel-perfect/releases)
 ![python version](https://img.shields.io/badge/python-3.11-yellow.svg)
 ![django version](https://img.shields.io/badge/Django-4.2.3-green.svg)
-![celery version](https://img.shields.io/badge/celery-5.3.4-blue.svg)
+![celery version](https://img.shields.io/badge/Celery-5.3.4-blue.svg)
 ![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg)
-![docker version](https://img.shields.io/badge/docker-darkblue.svg) 
-![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
+![docker version](https://img.shields.io/badge/Docker-4.20.1-darkblue.svg) 
+![License](https://img.shields.io/badge/license-MIT-white.svg)
 
 
 # Contents
@@ -58,9 +58,9 @@ ________
 # Visual Examples
 >Click on the image to view full-size
 
-| [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) |
+| [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" height="250px"/>](https://imgsli.com/MjA2Mjcy) |
 |:---:|:---:|
-| [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) |
+| [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" height="250px"/>](https://imgsli.com/MjA2Mjcw) | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" height="250px"/>](https://imgsli.com/MjA2MjY3) |
 
 ________
 # Installation Guide
