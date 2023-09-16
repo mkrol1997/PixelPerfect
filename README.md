@@ -152,7 +152,7 @@ Full Enhancement combines image upscaling and artefacts removal.
 
 **To perform full enhancement, follow these steps:**
 
-1. Complete the steps for both "Image Upscaling" and "Image Artefacts Removal" sections mentioned above.
+1. Complete the steps for both the ["Image Upscaling"](#Image Upscaling) and ["Image Artefacts Removal"](#Image-Artefacts-Removal) sections mentioned above.
 ________
 # Citation
 
