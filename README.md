@@ -20,6 +20,7 @@
 * [Installation](#Installation-Guide)
 * [Usage Instructions](#Usage-Instructions)
 * [Citation](#Citation)
+* [License and Acknowledgement](#License-and-Acknowledgement)
 ________
 Description
 ----------
