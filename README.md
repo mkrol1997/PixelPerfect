@@ -59,7 +59,7 @@ ________
 # Visual Examples
 
 <p align="center">
-  [![Sample 1](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png)](https://imgsli.com/MjA2Mjcz)
+  |[<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) |
   [![Sample 2](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png)](https://imgsli.com/MjA2Mjcy)
 </p>
 <p align="center">
