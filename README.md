@@ -18,7 +18,7 @@
 * [Description](#Description)
 * [Visual Examples](#Visual-Examples)
 * [Installation](#Installation-Guide)
-* [Usage](#Usage)
+* [Usage Instructions](#Usage-Instructions)
 * [Citation](#Citation)
 ________
 Description
@@ -58,11 +58,13 @@ ________
 # Visual Examples
 >Click on the image to view full-size
 
-<center>
+<div style="text-align:center;">
+
 | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"/>](https://imgsli.com/MjA2Mjcz) | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" height="250px"/>](https://imgsli.com/MjA2Mjcy) |
 |:---:|:---:|
 | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" height="250px"/>](https://imgsli.com/MjA2Mjcw) | [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" height="250px"/>](https://imgsli.com/MjA2MjY3) |
-</center>
+
+</div>
 
 ________
 # Installation Guide
