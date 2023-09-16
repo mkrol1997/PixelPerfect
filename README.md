@@ -119,8 +119,8 @@ Image upscaling increases the resolution of old images by generating additional 
 2. Select one of the four supported upscaling methods:
 
    - **Resize Scale x2, x3, x4:**
-     - ESPN
-     - FSRN
+     - ESPCN
+     - FSRCNN
      - EDSR (Note: This method may take longer compared to others.)
      
    - **Resize Scale x2, x4, x8:**
