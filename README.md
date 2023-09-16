@@ -135,9 +135,9 @@ ________
    - Save image with ```Download``` button or save on Google Drive with ```Google Drive``` button
 
 ## Image Full Enhancement
-  Full Enhancement includes image upscaling and artifacts removal. Follow the steps mentioned in :
-    * [Image Upscaling](##Image-Upscaling)
-    * [Image Artefacts Removal](##Image-Artefacts-Removal)
+  Full Enhancement includes image upscaling and artifacts removal. Follow the steps mentioned in:
+    * [Image Upscaling](#Image-Upscaling)
+    * [Image Artefacts Removal](#Image-Artefacts-Removal)
 ________
 # Citation
 
