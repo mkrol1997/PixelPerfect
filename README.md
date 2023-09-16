@@ -1,6 +1,7 @@
 <p align="center">
 <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/logo.png" width="500px" style="align=center"/>
 </p>
+
 # [PixelPerfect - Image Enhancement and Upscaling Web App](https://github.com/mkrol1997/pixel-perfect/)
 [![GitHub Stars](https://img.shields.io/github/stars/mkrol1997/pixel-perfect?style=social)](https://github.com/mkrol1997/pixel-perfect/)
 [![download](https://img.shields.io/github/downloads/mkrol1997/pixel-perfect/total.svg)](https://github.com/mkrol1997/pixel-perfect/releases)
@@ -108,9 +109,48 @@ ________
 ________
 # Usage
 
+## Image Upscaling
+  Image upscaling resizes old images, increasing their resolution by generating additional pixels.
+  To make the functionality work properly make sure to:
+    - Choose image input
+    - Choose one of the four supported methods
+      Resize scale x2, x3, x4:
+      * ESPN
+      * FSRN
+      * EDSR (be aware this method takes more than compared to others)
+      Resize scale x2, x4, x8:
+      * LapSRN
+    - Choose one of the available scales according to the upscale method
+    > (Optional) It is possible to compress image quality after the upscaling process to reduce its size
+    - Enable the switch button and choose the compression factor
+    - Save image with ```Download``` button or save on Google Drive with ```Google Drive``` button
+## Image Artefacts Removal
+  Image enhancement removes all artefacts from your picture. When selecting the enhancement factor, it's essential to consider that a lower factor will result in fewer artefacts being removed,     preserving more fine details within the image. Conversely, a higher factor will reduce image artefacts but may sacrifice some finer image details in the process.
+   - Choose image input
+   - Choose an image type from the available choices:
+       * RGB image
+       * Real-world RGB image
+       * Greyscale image
+   - Choose enhancement factor
+   - Save image with ```Download``` button or save on Google Drive with ```Google Drive``` button
 
+## Image Full Enhancement
+  Full Enhancement includes image upscaling and artifacts removal. Follow the steps mentioned in :
+    * [Image Upscaling](##Image-Upscaling)
+    * [Image Artefacts Removal](##Image-Artefacts-Removal)
 ________
 # Citation
+
+    @inproceedings{jiang2021towards,
+      title={Towards Flexible Blind JPEG Artifacts Removal},
+      author={Jiang, Jiaxi and Zhang, Kai and Timofte, Radu},
+      booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+      pages={4997--5006},
+      year={2021}
+      }
+      
+________
+# License and Acknowledgement
 
 ##### FBCNN, ICCV 2021
 ``` plaintext
