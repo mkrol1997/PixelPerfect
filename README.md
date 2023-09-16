@@ -166,12 +166,12 @@ ________
 # License and Acknowledgement
 
 ##### FBCNN, ICCV 2021
-``` plaintext
+``` 
 Jiang, J. (2023). FBCNN: Convolutional Neural Network for Fine-Grained Text Classification.
 Source code retrieved from: https://github.com/jiaxi-jiang/FBCNN
 
 The code from the FBCNN repository is subject to its own license terms.  
-Please refer to the original repository's [LICENSE](#https://github.com/jiaxi-jiang/FBCNN/blob/main/LICENSE)  
+Please refer to the original repository's [LICENSE](https://github.com/jiaxi-jiang/FBCNN/blob/main/LICENSE)  
 for the specific licensing information.
 
 When using code from the FBCNN repository in this project, make sure to comply with its license terms  
