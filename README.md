@@ -59,7 +59,7 @@ ________
 # Visual Examples
 
 <p align="center">
-  <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" alt="Image 1" height="250px"/>
+  [<img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" alt="Image 1" height="250px"/>](https://imgsli.com/MjA2Mjcz)
   <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" alt="Image 2" height="250px"/>
 </p>
 <p align="center">
