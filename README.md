@@ -152,17 +152,15 @@ Full Enhancement combines image upscaling and artefacts removal.
 
 **To perform full enhancement, follow these steps:**
 
-1. Complete the steps for both the ["Image Upscaling"](#Image Upscaling) and ["Image Artefacts Removal"](#Image-Artefacts-Removal) sections mentioned above.
+1. Complete the steps for both the ["Image Upscaling"](#Image-Upscaling) and ["Image Artefacts Removal"](#Image-Artefacts-Removal) sections mentioned above.
 ________
 # Citation
 
-    @inproceedings{jiang2021towards,
-      title={Towards Flexible Blind JPEG Artifacts Removal},
-      author={Jiang, Jiaxi and Zhang, Kai and Timofte, Radu},
-      booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-      pages={4997--5006},
-      year={2021}
-      }
+This project includes code from the following GitHub repository:
+
+- **Original Repository:** [FBCNN by jiaxi-jiang](https://github.com/jiaxi-jiang/FBCNN)
+
+Please visit the original repository for more details on the code and to show your support by giving it a star.
       
 ________
 # License and Acknowledgement
@@ -171,3 +169,7 @@ ________
 ``` plaintext
 Jiang, J. (2023). FBCNN: Convolutional Neural Network for Fine-Grained Text Classification.
 Source code retrieved from: https://github.com/jiaxi-jiang/FBCNN
+
+The code from the FBCNN repository is subject to its own license terms. Please refer to the original repository's [LICENSE](https://github.com/jiaxi-jiang/FBCNN/blob/main/LICENSE) for the specific licensing information.
+
+When using code from the FBCNN repository in this project, make sure to comply with its license terms and provide proper attribution as required by the license.
