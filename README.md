@@ -36,19 +36,24 @@ The **PixelPerfect Web App** is a powerful tool that leverages AI models to enha
  - Docker
  - Docker-compose 
 
-- **Image Upscaling**: Improve image quality and resolution using advanced AI upscaling models.
+This web app is built using cutting-edge technologies and AI models, ensuring high-quality results for image restoration tasks. Whether you're a photographer, designer, or simply want to enhance your personal photos, this app has you covered.
 
-- **Image Compression**: Reduce image file sizes while maintaining image quality.
-
-- **Artifact Removal**: Automatically remove image artefacts and imperfections.
-
-- **Download and Save**: Users can easily download enhanced images or save them to Google Drive.
-
-- **User Authentication**: Secure user accounts and profiles for a personalized experience.
-
-- **User Profiles**: Customize settings and access saved images in user profiles.
-
-This web app is built using cutting-edge technologies and AI models, ensuring high-quality results for image enhancement tasks. Whether you're a photographer, designer, or simply want to enhance your personal photos, this app has you covered.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px"></td>
+    </tr>
+  </table>
+</div>
 
 Try it out and take your images to the next level!
 ________
