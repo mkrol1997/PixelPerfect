@@ -10,7 +10,7 @@
 ![celery version](https://img.shields.io/badge/Celery-5.3.4-blue.svg)
 ![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg)
 ![docker version](https://img.shields.io/badge/Docker-4.20.1-darkblue.svg)
-![docker version](https://img.shields.io/badge/Docker--compose-4.20.1-cyan.svg) 
+![docker version](https://img.shields.io/badge/Docker--compose-2.21-cyan.svg) 
 ![License](https://img.shields.io/badge/license-MIT-white.svg)
 
 
