@@ -55,7 +55,7 @@ Our web app is designed to deliver high-quality results for image restoration ta
     </tr>
     <tr>
     </tr>
-    <tr>
+    <tr style: "margin-top: 50px">
       <td align="center"><p>Gallery</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
       <td align="center"><p>Profile</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
     </tr>
