@@ -54,12 +54,16 @@ Our web app is designed to deliver high-quality results for image restoration ta
       <td align="center"><p>Dashboard</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
     </tr>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
-    </tr>  
+    </tr>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px"></td>
+      <td align="center"><p>Gallery</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
+      <td align="center"><p>Profile</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td align="center"><p>Image Enhancement</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
+      <td align="center"><p>Result Modal</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px"></td>
     </tr>
   </table>
 </div>
