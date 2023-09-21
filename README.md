@@ -39,40 +39,17 @@ The **PixelPerfect Web App** is a powerful tool that leverages AI models to enha
 
 This web app is built using cutting-edge technologies and AI models, ensuring high-quality results for image restoration tasks. Whether you're a photographer, designer, or simply want to enhance your personal photos, this app has you covered.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <p>&#x1F534; Main Page</p>
-        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px">
-      </td>
-      <td align="center">
-        <p>&#x1F534; Dashboard</p>
-        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px">
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <p>&#x1F534; Profile</p>
-        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px">
-      </td>
-      <td align="center">
-        <p>&#x1F534; Gallery</p>
-        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px">
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <p>&#x1F534; Enhance</p>
-        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px">
-      </td>
-      <td align="center">
-        <p>&#x1F534; Result</p>
-        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px">
-      </td>
-    </tr>
-  </table>
-</div>
+| Main Page                                 | Dashboard                                 |
+| ---------------------------------------- | ----------------------------------------- |
+| ![Main Page](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png) | ![Dashboard](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png) |
+
+| Profile                                  | Gallery                                  |
+| ---------------------------------------- | ----------------------------------------- |
+| ![Profile](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png)     | ![Gallery](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png)   |
+
+| Enhance                                  | Result                                   |
+| ---------------------------------------- | ----------------------------------------- |
+| ![Enhance](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png)     | ![Result](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png)   |
 
 Try it out and take your images to the next level!
 ________
