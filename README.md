@@ -27,7 +27,7 @@ ________
 ________
 # Overview
 
-The **PixelPerfect Web App** is a sophisticated tool that harnesses the power of AI models to elevate image quality, reduce image artifacts, and enhance image resolution. 
+The **PixelPerfect Web App** is a sophisticated tool that harnesses the power of AI models to elevate image quality, reduce image artefacts, and enhance image resolution. 
 
 ## Technologies Used
 
@@ -53,13 +53,9 @@ Our web app is designed to deliver high-quality results for image restoration ta
       <td align="center"><p>Login</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
       <td align="center"><p>Dashboard</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
     </tr>
-    <tr>
-    </tr>
-    <tr style: "margin-top: 50px">
+    <tr >
       <td align="center"><p>Gallery</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
       <td align="center"><p>Profile</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
-    </tr>
-    <tr>
     </tr>
     <tr>
       <td align="center"><p>Image Enhancement</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
