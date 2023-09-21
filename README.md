@@ -42,16 +42,34 @@ This web app is built using cutting-edge technologies and AI models, ensuring hi
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
+      <td align="center">
+        <p>Main Page</p>
+        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px">
+      </td>
+      <td align="center">
+        <p>Dashboard</p>
+        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px">
+      </td>
     </tr>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
+      <td align="center">
+        <p>Profile</p>
+        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px">
+      </td>
+      <td align="center">
+        <p>Gallery</p>
+        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px">
+      </td>
     </tr>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px"></td>
+      <td align="center">
+        <p>Enhance</p>
+        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px">
+      </td>
+      <td align="center">
+        <p>Result</p>
+        <img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px">
+      </td>
     </tr>
   </table>
 </div>
