@@ -27,17 +27,24 @@ ________
 ________
 # Overview
 
-The **PixelPerfect Web App** is a powerful tool that leverages AI models to enhance images, reduce image artefacts, and upscale image resolution. It is built with the use of technologies like:
+The **PixelPerfect Web App** is a sophisticated tool that harnesses the power of AI models to elevate image quality, reduce image artifacts, and enhance image resolution. 
 
- - Django
- - PyTorch
- - Allauth
- - OAuth2
- - Celery
- - Docker
- - Docker-compose 
+## Technologies Used
 
-This web app is built using cutting-edge technologies and AI models, ensuring high-quality results for image restoration tasks. Whether you're a photographer, designer, or simply want to enhance your personal photos, this app has you covered.
+Built using cutting-edge technologies, including:
+
+- **Django**: A high-level Python web framework.
+- **PyTorch**: A leading deep learning framework for AI models.
+- **Allauth**: For secure user authentication and management.
+- **OAuth2**: Ensuring secure authorization.
+- **Celery**: Enabling efficient asynchronous task processing.
+- **Docker and Docker-compose**: Streamlining deployment and ensuring consistency.
+
+## Elevate Your Images
+
+Our web app is designed to deliver high-quality results for image restoration tasks. Whether you're a photographer, designer, or simply looking to enhance personal photos, PixelPerfect has you covered.
+
+## Screenshots
 
 | Main Page                                 | Dashboard                                 |
 | ---------------------------------------- | ----------------------------------------- |
@@ -51,7 +58,7 @@ This web app is built using cutting-edge technologies and AI models, ensuring hi
 | ---------------------------------------- | ----------------------------------------- |
 | ![Enhance](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png)     | ![Result](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png)   |
 
-Try it out and take your images to the next level!
+**Try it out today and take your images to the next level!**
 ________
 # Description
 
