@@ -15,14 +15,44 @@
 
 # Contents
 
+* [Overview](#Overview)
 * [Description](#Description)
 * [Visual Examples](#Visual-Examples)
 * [Installation](#Installation-Guide)
 * [Usage Instructions](#Usage-Instructions)
 * [Citation](#Citation)
 * [License and Acknowledgement](#License-and-Acknowledgement)
+
 ________
-Description
+# Overview
+----------
+
+The **PixelPerfect Web App** is a powerful tool that leverages AI models to enhance images, reduce image artefacts, and upscale image resolution. It is built with use of technologies like:
+
+ - Django
+ - PyTorch
+ - Allauth
+ - OAuth2
+ - Docker
+ - Docker-compose 
+
+- **Image Upscaling**: Improve image quality and resolution using advanced AI upscaling models.
+
+- **Image Compression**: Reduce image file sizes while maintaining image quality.
+
+- **Artifact Removal**: Automatically remove image artefacts and imperfections.
+
+- **Download and Save**: Users can easily download enhanced images or save them to Google Drive.
+
+- **User Authentication**: Secure user accounts and profiles for a personalized experience.
+
+- **User Profiles**: Customize settings and access saved images in user profiles.
+
+This web app is built using cutting-edge technologies and AI models, ensuring high-quality results for image enhancement tasks. Whether you're a photographer, designer, or simply want to enhance your personal photos, this app has you covered.
+
+Try it out and take your images to the next level!
+________
+# Description
 ----------
 
 Welcome to the PixelPerfect Web App, a versatile tool that empowers users to easily transform their images. Whether you're dealing with   
@@ -52,7 +82,7 @@ Experience enhanced convenience by creating a dedicated user account within the 
 
 Simplify the registration and login process with our seamless Google OAuth2 integration. You can create an account or log in using your Google credentials, ensuring a secure and frictionless user experience.
 
-Whether you're a professional photographer, a graphic designer, or someone looking to improve their personal photos, PixelPerfect provides the tools you need to transform your images into sharper, more detailed visuals effortlessly.
+Whether you're a professional photographer, graphic designer, or someone looking to improve their personal photos, PixelPerfect provides the tools you need to effortlessly transform your images into sharper, more detailed visuals.
 
 Ready to elevate your images and streamline your image processing workflow? Sign up today or log in with your Google account to get started!
 
