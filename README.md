@@ -103,14 +103,12 @@ ________
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
+      <td align="center"><a href="https://imgsli.com/MjA2Mjcz"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_1.png" height="250px"></a></td>
+      <td align="center"><a href="https://imgsli.com/MjA2Mjcy"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_2.png" height="250px"></a></td>
     </tr>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px"></td>
+      <td align="center"><a href="https://imgsli.com/MjA2Mjcw"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_3.png" height="250px"></a></td>
+      <td align="center"><a href="https://imgsli.com/MjA2MjY3"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/sample_4.png" height="250px"></a></td>
     </tr>
   </table>
 </div>
