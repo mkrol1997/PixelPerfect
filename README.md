@@ -50,8 +50,8 @@ Our web app is designed to deliver high-quality results for image restoration ta
 <div align="center">
   <table>
     <tr>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
-      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
+      <td align="center"><p>Login</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
+      <td align="center"><p>Dashboard</p><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
     </tr>
     <tr>
       <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
