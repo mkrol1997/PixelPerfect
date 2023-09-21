@@ -42,7 +42,7 @@ Built using cutting-edge technologies, including:
 
 ## Elevate Your Images
 
-Our web app is designed to deliver high-quality results for image restoration tasks. Whether you're a photographer, designer, or simply looking to enhance personal photos, PixelPerfect has you covered.
+Our web app is designed to deliver high-quality results for image restoration tasks. PixelPerfect's commitment to utilizing the latest AI models and advanced technologies guarantees remarkable results in image restoration. Whether you are a professional photographer, designer, or an individual seeking to enhance personal photographs, our application is designed to meet your needs. Elevate your images to the next level of quality and clarity.
 
 ## Screenshots
 
