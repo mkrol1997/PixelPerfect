@@ -33,6 +33,7 @@ The **PixelPerfect Web App** is a powerful tool that leverages AI models to enha
  - PyTorch
  - Allauth
  - OAuth2
+ - Celery
  - Docker
  - Docker-compose 
 
