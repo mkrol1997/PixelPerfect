@@ -47,17 +47,20 @@ Our web app is designed to deliver high-quality results for image restoration ta
 ## Screenshots
 >Click on the image to view full-size
 
-| Main Page                                 | Dashboard                                 |
-| ---------------------------------------- | ----------------------------------------- |
-| ![Main Page](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png) | ![Dashboard](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png) |
-
-| Profile                                  | Gallery                                  |
-| ---------------------------------------- | ----------------------------------------- |
-| ![Profile](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png)     | ![Gallery](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png)   |
-
-| Enhance                                  | Result                                   |
-| ---------------------------------------- | ----------------------------------------- |
-| ![Enhance](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png)     | ![Result](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png)   |
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/main_page.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/dashboard.png" height="250px"></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/gallery.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/profile.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png" height="250px"></td>
+      <td align="center"><img src="pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png" height="250px"></td>
+    </tr>
+  </table>
+</div>
 
 **Experience the power of PixelPerfect today and witness the transformation of your images!**
 ________
