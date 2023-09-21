@@ -58,7 +58,7 @@ Our web app is designed to deliver high-quality results for image restoration ta
 | ---------------------------------------- | ----------------------------------------- |
 | ![Enhance](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/enhance.png)     | ![Result](pixel_perfect/pixel_perfect/static/pixel_perfect/assets/images/result.png)   |
 
-**Try it out today and take your images to the next level!**
+**Experience the power of PixelPerfect today and witness the transformation of your images!**
 ________
 # Description
 
