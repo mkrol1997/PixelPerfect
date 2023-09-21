@@ -62,9 +62,6 @@ Our web app is designed to deliver high-quality results for image restoration ta
 ________
 # Description
 
-Welcome to the PixelPerfect Web App, a versatile tool that empowers users to easily transform their images. Whether you're dealing with   
-low-resolution photos, noisy images, or compression artefacts, our web app offers a comprehensive solution to enhance, upscale, and refine your visuals.
-
 ## Key Features:
 
 ### 1. Image Upscaling
