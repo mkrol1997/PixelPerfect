@@ -13,7 +13,7 @@
 ![docker version](https://img.shields.io/badge/Docker--compose-2.21-cyan.svg) 
 ![License](https://img.shields.io/badge/license-MIT-white.svg)
 
-
+________
 # Contents
 
 * [Overview](#Overview)
@@ -26,7 +26,6 @@
 
 ________
 # Overview
-----------
 
 The **PixelPerfect Web App** is a powerful tool that leverages AI models to enhance images, reduce image artefacts, and upscale image resolution. It is built with the use of technologies like:
 
@@ -54,7 +53,6 @@ This web app is built using cutting-edge technologies and AI models, ensuring hi
 Try it out and take your images to the next level!
 ________
 # Description
-----------
 
 Welcome to the PixelPerfect Web App, a versatile tool that empowers users to easily transform their images. Whether you're dealing with   
 low-resolution photos, noisy images, or compression artefacts, our web app offers a comprehensive solution to enhance, upscale, and refine your visuals.
