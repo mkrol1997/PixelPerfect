@@ -9,7 +9,8 @@
 ![django version](https://img.shields.io/badge/Django-4.2.3-green.svg)
 ![celery version](https://img.shields.io/badge/Celery-5.3.4-blue.svg)
 ![pytorch version](https://img.shields.io/badge/pytorch-1.7-orange.svg)
-![docker version](https://img.shields.io/badge/Docker-4.20.1-darkblue.svg) 
+![docker version](https://img.shields.io/badge/Docker-4.20.1-darkblue.svg)
+![docker version](https://img.shields.io/badge/Docker-compose-4.20.1-cyan.svg) 
 ![License](https://img.shields.io/badge/license-MIT-white.svg)
 
 
@@ -27,7 +28,7 @@ ________
 # Overview
 ----------
 
-The **PixelPerfect Web App** is a powerful tool that leverages AI models to enhance images, reduce image artefacts, and upscale image resolution. It is built with use of technologies like:
+The **PixelPerfect Web App** is a powerful tool that leverages AI models to enhance images, reduce image artefacts, and upscale image resolution. It is built with the use of technologies like:
 
  - Django
  - PyTorch
