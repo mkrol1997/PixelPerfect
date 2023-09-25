@@ -25,7 +25,7 @@ services:
     depends_on:
       - web
       - redis
-    command: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
+    entrypoint: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
     volumes:
       - ./media:/app/media
       - ./db.sqlite3:/app/db.sqlite3
