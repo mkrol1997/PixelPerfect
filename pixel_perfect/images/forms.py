@@ -1,7 +1,7 @@
 from django import forms
 from django.core.validators import FileExtensionValidator
 
-from .validators import ImageValidator
+from images.validators import ImageValidator
 
 
 class UpscaleImagesForm(forms.Form):

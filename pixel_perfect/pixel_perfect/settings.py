@@ -7,13 +7,15 @@ from dotenv import find_dotenv, load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-IMAGE_PROCESSING = BASE_DIR.parent  # in accordance with your directories
+
+IMAGE_PROCESSING = BASE_DIR.parent
 sys.path.append(str(IMAGE_PROCESSING))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 load_dotenv(find_dotenv())
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ["SECRET_KEY"]
 
@@ -31,8 +33,8 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
-    "images.apps.ImagesConfig",
     "users.apps.UsersConfig",
+    "images.apps.ImagesConfig",
     "django.contrib.sites",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -47,6 +49,10 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
+# Environment variables
+
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
+os.environ["OAUTHLIB_RELAX_TOKEN_SCOPE"] = "1"
 
 GOOGLE_CLIENT_CONFIG = {
     "web": {
@@ -60,9 +66,27 @@ GOOGLE_CLIENT_CONFIG = {
     }
 }
 
+# Other
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 SITE_ID = 2
 
 ROOT_URLCONF = "pixel_perfect.urls"
+
+LOGIN_URL = "/"
+LOGIN_REDIRECT_URL = "/dashboard"
+LOGOUT_REDIRECT_URL = "/"
+
+PERMISSION_DENIED_MESSAGE = "You need to be logged in to view this page. Please login or register!"
+
+GOOGLE_DRIVE_FOLDER_NAME = "PixelPerfect"
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
+
+# Social account config
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
 SOCIALACCOUNT_QUERY_EMAIL = True
@@ -80,21 +104,6 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 GOOGLE_OAUTH_REDIRECT_URI = "http://localhost:8000/oauth2callback"
-
-LOGIN_URL = "/"
-LOGIN_REDIRECT_URL = "/dashboard"
-LOGOUT_REDIRECT_URL = "/"
-
-
-os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
-os.environ["OAUTHLIB_RELAX_TOKEN_SCOPE"] = "1"
-
-GOOGLE_DRIVE_FOLDER_NAME = "PixelPerfect"
-
-MESSAGE_TAGS = {
-    # Set error message background colour to red
-    messages.ERROR: "danger",
-}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -125,7 +134,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "pixel_perfect.wsgi.application"
 
-
 # Database
 
 DATABASES = {
@@ -151,7 +159,6 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
 
 # Internationalization
 
@@ -190,4 +197,3 @@ MEDIA_URL = "/media/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"

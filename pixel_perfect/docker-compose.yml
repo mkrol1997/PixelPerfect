@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    entrypoint: ["/bin/sh", "-c"]
+    env_file: .env
+    depends_on:
+      - redis
+    command:
+      - |
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./media:/app/media
+      - ./db.sqlite3:/app/db.sqlite3
+    ports:
+      - "8000:8000"
+
+  queue:
+    build: .
+    env_file: .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=pixel_perfect.settings
+    depends_on:
+      - web
+      - redis
+    command: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
+    volumes:
+      - ./media:/app/media
+      - ./db.sqlite3:/app/db.sqlite3
+
+  redis:
+    image: redis:7-alpine

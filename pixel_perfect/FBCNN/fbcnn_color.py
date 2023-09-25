@@ -12,19 +12,12 @@ from FBCNN.models.network_fbcnn import FBCNN as net
 from .utils import utils_image as util
 
 
-def enhance(src_image_path, cnn_model, quality_factor, save_to):
-    testset_name = save_to
+def enhance(src_image_path, cnn_model, quality_factor, ):
     n_channels = 3  # set 1 for grayscale image, set 3 for color image
     model_name = "fbcnn_color.pth"
     nc = [64, 128, 256, 512]
     nb = 4
     show_img = False  # default: False
-
-    testsets = settings.BASE_DIR
-    results = settings.BASE_DIR
-
-    result_name = testset_name + "_" + model_name[:-4]
-    E_path = os.path.join(results, result_name, str(quality_factor))  # E_path, for Estimated images
 
     model_path = cnn_model
 
