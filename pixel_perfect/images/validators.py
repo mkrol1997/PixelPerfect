@@ -1,5 +1,3 @@
-from collections.abc import Mapping
-
 from django.core.exceptions import ValidationError
 from django.core.files.images import get_image_dimensions
 from django.utils.deconstruct import deconstructible
@@ -14,7 +12,6 @@ class ImageValidator(object):
 
     def __call__(self, image):
         width, height = get_image_dimensions(image)
-        print(width, height, image.size)
         if image.size > self.size:
             raise ValidationError(
                 message="",
@@ -49,12 +46,11 @@ class ImageValidator(object):
 
     def __eq__(self, other):
         return (
-            isinstance(other, self.__class__)
-            and self.size == other.size
-            and self.width == other.width
-            and self.height == other.height
+                isinstance(other, self.__class__)
+                and self.size == other.size
+                and self.width == other.width
+                and self.height == other.height
         )
-
 
 #
 #

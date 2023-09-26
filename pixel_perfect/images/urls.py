@@ -9,6 +9,7 @@ from images.views import (
     GoogleDriveUploadView,
     ImageGalleryView,
     UpscaleImageView,
+    TrackTaskView,
 )
 
 urlpatterns = [
@@ -16,6 +17,7 @@ urlpatterns = [
     path("enhance/", EnhanceImageView.as_view(), name="enhance"),
     path("full-enhancement/", FullEnhancementView.as_view(), name="full_enhancement"),
     path("list/", ImageGalleryView.as_view(), name="images_list"),
+    path('track/', TrackTaskView.as_view()),
     path("download/<int:pk>", DownloadImageView.as_view(), name="save"),
     path("send-image/<int:pk>", GoogleDriveUploadView.as_view(), name="upload"),
     path("delete-image/", DeleteImageView.as_view(), name="delete_image"),

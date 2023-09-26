@@ -41,14 +41,37 @@ function toggle_loader(){
     }
 }
 
+function fetch_image(task_id) {
+	setTimeout(async function() {
+		get_status_api = window.location.protocol + '//' + window.location.host + '/images/track/?task_id=' + task_id;
+
+		let response = await fetch(get_status_api);
+		let json_response = await response.json();
+
+		if(json_response.status == 'SUCCESS') {
+		    var timestamp = '?t=' + new Date().getTime();
+
+            toggle_loader()
+
+            image.src = json_response.result.src + timestamp;
+            document.getElementById('download').setAttribute("href", window.location.protocol + '//' + window.location.host + '/images/download/' + json_response.result.id);
+            document.getElementById('saveGDrive').setAttribute("href", window.location.protocol + '//' + window.location.host + '/images/send-image/' + json_response.result.id)
+
+            submitBtn.disabled = false;
+			return;
+		}
+
+		fetch_image(task_id);
+	}, 1000);
+}
+
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     console.log(src_image.files[0])
     document.getElementById('messageContainer').setAttribute("style", "display: none");
 
     toggle_loader()
-
-    var timestamp = '?t=' + new Date().getTime();
     image.src = ''
 
     const formData = new FormData(form);
@@ -56,22 +79,17 @@ form.addEventListener('submit', async (e) => {
     try {
         resultBtn.disabled = false;
         submitBtn.setAttribute('disabled', true)
+
         const response = await fetch(window.location.href, {
             method: 'POST',
             body: formData,
         });
 
-        const json = await response.json();
+        const upscale_task = await response.json();
 
-        if (json.form_valid) {
+        if (upscale_task.form_valid) {
+            await fetch_image(upscale_task.task_id)
 
-            toggle_loader()
-
-            image.src = json.src + timestamp;
-
-            document.getElementById('download').setAttribute("href", window.location.protocol + '//' + window.location.host + '/images/download/' + json.img_id)
-            document.getElementById('saveGDrive').setAttribute("href", window.location.protocol + '//' + window.location.host + '/images/send-image/' + json.img_id)
-            submitBtn.disabled = false;
         } else {
             localStorage.setItem('formNotValid', 'true');
             location.reload();
