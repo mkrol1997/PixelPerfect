@@ -141,10 +141,9 @@ class ImageGalleryView(CustomLoginRequiredMixin, ListView):
     model = EnhancedImages
     context_object_name = "images"
     paginate_by = 6
-    ordering = ["-date_created"]
 
     def get_queryset(self):
-        return EnhancedImages.objects.filter(img_owner=self.request.user.id)
+        return EnhancedImages.objects.filter(img_owner=self.request.user.id).order_by('-date_created')
 
 
 class TrackTaskView(View):
@@ -162,9 +161,9 @@ class DeleteImageView(CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView)
     def get_object(self, queryset=None):
         return EnhancedImages.objects.get(pk=self.request.GET.get("img_id"))
 
-    def delete(self, request, *args, **kwargs):
+    def form_valid(self, request, *args, **kwargs):
         messages.info(self.request, self.success_message)
-        return super(DeleteImageView, self).delete(request, *args, **kwargs)
+        return super(DeleteImageView, self).form_valid(request, *args, **kwargs)
 
 
 class GoogleDriveUploadView(CustomLoginRequiredMixin, View):
