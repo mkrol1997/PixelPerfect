@@ -5,7 +5,6 @@ import os.path
 import google_auth_oauthlib
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
