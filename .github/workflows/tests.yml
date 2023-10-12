@@ -3,9 +3,9 @@ name: CI
 on:
 
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
 
   workflow_dispatch:
 
@@ -24,7 +24,8 @@ jobs:
           python-version: "3.11"
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
-      
+        run: pip install -r pixel_perfect/requirements.txt
+        working-directory: ${{ github.workspace }}
+
       - name: Run Django tests
         run: python manage.py test
