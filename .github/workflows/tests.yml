@@ -28,4 +28,20 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Run Django tests
-        run: python manage.py test
+        run: |
+          python manage.py makemigrations
+          python manage.py migrate
+          python manage.py test
+
+        working-directory: ${{ github.workspace/pixel_perfect }}
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          EMAIL: ${{ secrets.EMAIL }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          AUTH_URI: ${{ secrets.AUTH_URI }}
+          TOKEN_URI: ${{ secrets.TOKEN_URI }}
+          AUTH_PROVIDER_X509_CERT_URL: ${{ secrets.AUTH_PROVIDER_X509_CERT_URL }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+
