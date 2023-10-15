@@ -36,4 +36,4 @@ jobs:
           docker logout
 
         if: always()
-        working-directory: ${{ github.workspace }}/testapp
+        working-directory: ${{ github.workspace }}/pixel_perfect
