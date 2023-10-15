@@ -2,9 +2,19 @@ version: "3.9"
 services:
   web:
     build: .
-    image: ${ECR_REGISTRY}/pixel_perfect:web
+    image: ${ECR_REGISTRY}/pixel_perfect:latest
     entrypoint: ["/bin/sh", "-c"]
-    env_file: .env
+    environment:
+      - SECRET_KEY
+      - EMAIL
+      - EMAIL_PASSWORD
+      - CLIENT_ID
+      - PROJECT_ID
+      - AUTH_URI
+      - TOKEN_URI
+      - AUTH_PROVIDER_X509_CERT_URL
+      - CLIENT_SECRET
+      - ECR_REGISTRY
     depends_on:
       - redis
     command:
@@ -20,10 +30,19 @@ services:
 
   queue:
     build: .
-    image: ${ECR_REGISTRY}/pixel_perfect:queue
-    env_file: .env
+    image: ${ECR_REGISTRY}/pixel_perfect:latest
     environment:
       - DJANGO_SETTINGS_MODULE=pixel_perfect.settings
+      - SECRET_KEY
+      - EMAIL
+      - EMAIL_PASSWORD
+      - CLIENT_ID
+      - PROJECT_ID
+      - AUTH_URI
+      - TOKEN_URI
+      - AUTH_PROVIDER_X509_CERT_URL
+      - CLIENT_SECRET
+      - ECR_REGISTRY
     depends_on:
       - web
       - redis
