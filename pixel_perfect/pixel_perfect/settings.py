@@ -22,7 +22,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOST_1')]
+ALLOWED_HOSTS = [os.getenv("ALLOWED_HOST_1")]
 
 # Application definition
 
@@ -70,7 +70,7 @@ GOOGLE_CLIENT_CONFIG = {
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SITE_ID = 1
+SITE_ID = 3
 
 ROOT_URLCONF = "pixel_perfect.urls"
 
