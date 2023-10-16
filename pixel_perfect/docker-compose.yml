@@ -15,6 +15,7 @@ services:
       - AUTH_PROVIDER_X509_CERT_URL
       - CLIENT_SECRET
       - ECR_REGISTRY
+      - ALLOWED_HOST_1
     depends_on:
       - redis
     command:
@@ -43,6 +44,7 @@ services:
       - AUTH_PROVIDER_X509_CERT_URL
       - CLIENT_SECRET
       - ECR_REGISTRY
+      - ALLOWED_HOST_1
     depends_on:
       - web
       - redis
