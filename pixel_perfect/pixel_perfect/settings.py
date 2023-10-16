@@ -70,7 +70,7 @@ GOOGLE_CLIENT_CONFIG = {
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SITE_ID = 3
+SITE_ID = os.getenv('SITE_ID')
 
 ROOT_URLCONF = "pixel_perfect.urls"
 
@@ -137,9 +137,13 @@ WSGI_APPLICATION = "pixel_perfect.wsgi.application"
 # Database
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': os.environ['DB_HOST'],
+        'PORT': os.environ['DB_PORT'],
     }
 }
 
