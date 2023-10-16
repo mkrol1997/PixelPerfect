@@ -25,7 +25,6 @@ services:
         python manage.py runserver 0.0.0.0:80
     volumes:
       - ./media:/app/media
-      - ./db.sqlite3:/app/db.sqlite3
     ports:
       - "80:80"
 
@@ -51,7 +50,6 @@ services:
     entrypoint: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
     volumes:
       - ./media:/app/media
-      - ./db.sqlite3:/app/db.sqlite3
 
   redis:
     image: redis:7-alpine
