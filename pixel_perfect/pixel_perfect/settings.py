@@ -70,7 +70,7 @@ GOOGLE_CLIENT_CONFIG = {
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SITE_ID = os.getenv('SITE_ID')
+SITE_ID = int(os.getenv('SITE_ID'))
 
 ROOT_URLCONF = "pixel_perfect.urls"
 
@@ -144,6 +144,10 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
+    },
+    'test': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
