@@ -15,18 +15,19 @@ services:
       - AUTH_PROVIDER_X509_CERT_URL
       - CLIENT_SECRET
       - ECR_REGISTRY
+      - ALLOWED_HOST_1
     depends_on:
       - redis
     command:
       - |
         python manage.py makemigrations
         python manage.py migrate
-        python manage.py runserver 0.0.0.0:8000
+        python manage.py runserver 0.0.0.0:80
     volumes:
       - ./media:/app/media
       - ./db.sqlite3:/app/db.sqlite3
     ports:
-      - "8000:8000"
+      - "80:80"
 
   queue:
     build: .
@@ -43,6 +44,7 @@ services:
       - AUTH_PROVIDER_X509_CERT_URL
       - CLIENT_SECRET
       - ECR_REGISTRY
+      - ALLOWED_HOST_1
     depends_on:
       - web
       - redis
