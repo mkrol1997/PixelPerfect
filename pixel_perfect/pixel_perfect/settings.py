@@ -70,7 +70,7 @@ GOOGLE_CLIENT_CONFIG = {
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-SITE_ID = int(os.getenv('SITE_ID'))
+SITE_ID = 3
 
 ROOT_URLCONF = "pixel_perfect.urls"
 
