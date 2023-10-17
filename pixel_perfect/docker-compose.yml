@@ -1,8 +1,5 @@
 version: "3.9"
 
-volumes:
-  postgres_data_dev: {}
-
 services:
   web:
     build: .
@@ -55,6 +52,13 @@ services:
     entrypoint: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
     volumes:
       - ./media:/app/media
-      - postgres_data_dev:/var/lib/postgresql/data
+
   redis:
     image: redis:7-alpine
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
