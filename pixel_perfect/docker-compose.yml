@@ -26,7 +26,6 @@ services:
         python manage.py runserver 0.0.0.0:80
     volumes:
       - ./media:/app/media
-      - postgres_data_dev:/var/lib/postgresql/data
     ports:
       - "80:80"
 
@@ -59,6 +58,6 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
