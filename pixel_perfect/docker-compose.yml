@@ -28,6 +28,8 @@ services:
       - ./media:/app/media
     ports:
       - "80:80"
+    links:
+      - postgres
 
   queue:
     build: .
