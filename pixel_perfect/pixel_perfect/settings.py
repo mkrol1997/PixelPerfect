@@ -138,11 +138,11 @@ WSGI_APPLICATION = "pixel_perfect.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('ALLOWED_HOST_1'),
+        'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
     },
     'test': {
