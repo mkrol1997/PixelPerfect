@@ -19,6 +19,7 @@ services:
       - ALLOWED_HOST_1
     depends_on:
       - redis
+      - postgres
     command:
       - |
         python manage.py makemigrations
@@ -28,8 +29,6 @@ services:
       - ./media:/app/media
     ports:
       - "80:80"
-    links:
-      - postgres
 
   queue:
     build: .
@@ -47,6 +46,7 @@ services:
       - CLIENT_SECRET
       - ECR_REGISTRY
       - ALLOWED_HOST_1
+
     depends_on:
       - web
       - redis
@@ -64,4 +64,4 @@ services:
       - POSTGRES_PASSWORD
       - POSTGRES_DB
     ports:
-      - "5432:5432"
+       - "5432:5432"
