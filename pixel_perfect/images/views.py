@@ -18,6 +18,7 @@ from images.forms import EnhanceImagesForm, UpscaleImagesForm
 from images.models import EnhancedImages
 from users.gdrive import drive_manager
 from users.mixins import CustomLoginRequiredMixin
+from billiard.exceptions import WorkerLostError
 
 
 class UpscaleImageView(CustomLoginRequiredMixin, FormView):
@@ -146,7 +147,12 @@ class ImageGalleryView(CustomLoginRequiredMixin, ListView):
 class TrackTaskView(View):
     def get(self, request):
         task_id = request.GET.get("task_id")
-        result_wrapper = AsyncResult(task_id)
+
+        try:
+            result_wrapper = AsyncResult(task_id)
+        except WorkerLostError:
+            return JsonResponse({"status": 'ABORTED'})
+
         return JsonResponse({"status": result_wrapper.status, 'result': result_wrapper.result})
 
 
