@@ -24,6 +24,7 @@ services:
       - DB_PORT
     depends_on:
       - redis
+      - postgres
     command:
       - |
         python manage.py makemigrations
@@ -60,6 +61,7 @@ services:
     depends_on:
       - web
       - redis
+      - postgres
     entrypoint: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
     volumes:
       - /home/pixel_perfect/models/enhance:/app/image_processing/models/enhance
