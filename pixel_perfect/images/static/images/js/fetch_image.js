@@ -61,7 +61,8 @@ function fetch_image(task_id) {
 			return;
 		}
         if(json_response.status == 'ABORTED'){
-            confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")
+            console.log('Process aborted due to low memory resources')
+            window.alert("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")
             location.reload();
         }
 
