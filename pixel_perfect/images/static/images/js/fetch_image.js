@@ -46,7 +46,15 @@ function fetch_image(task_id) {
 		get_status_api = window.location.protocol + '//' + window.location.host + '/images/track/?task_id=' + task_id;
 
 		let response = await fetch(get_status_api);
-		let json_response = await response.json();
+		try{
+		    let json_response = await response.json();
+		} catch (error){
+		    console.log(error)
+            if(confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")){
+                window.location.reload();
+            }
+		}
+
 
 		if(json_response.status == 'SUCCESS') {
 		    var timestamp = '?t=' + new Date().getTime();
@@ -95,10 +103,6 @@ form.addEventListener('submit', async (e) => {
             location.reload();
         }
     } catch (error) {
-        console.log(error)
-        if(confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")){
-            window.location.reload();
-        }
     }
 });
 
