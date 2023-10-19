@@ -96,6 +96,9 @@ form.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.log(error)
+        if(confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")){
+            window.location.reload();
+        }
     }
 });
 

@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import FileResponse, JsonResponse
-from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic.edit import DeleteView, FormView
@@ -48,10 +48,7 @@ class UpscaleImageView(CustomLoginRequiredMixin, FormView):
                 "quality_factor": form.cleaned_data.get("compress_q_factor"),
             }
 
-            try:
-                upscale_task = upscale_image_task.delay(upscale_params, request.user.id)
-            except Exception as e:
-                print(e)
+            upscale_task = upscale_image_task.delay(upscale_params, request.user.id)
             return JsonResponse({"form_valid": True, 'task_id': upscale_task.id})
 
         return JsonResponse({"form_valid": False})

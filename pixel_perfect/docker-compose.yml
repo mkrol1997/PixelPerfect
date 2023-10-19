@@ -24,7 +24,6 @@ services:
       - DB_PORT
     depends_on:
       - redis
-      - postgres
     command:
       - |
         python manage.py makemigrations
@@ -32,6 +31,7 @@ services:
         python manage.py runserver 0.0.0.0:80
     volumes:
       - ./media:/app/media
+      - /home/models/enhance/:/app/image_processing/models/enhance
     ports:
       - "80:80"
 
@@ -51,6 +51,11 @@ services:
       - CLIENT_SECRET
       - ECR_REGISTRY
       - ALLOWED_HOST_1
+      - DB_NAME
+      - DB_USER
+      - DB_PASSWORD
+      - DB_HOST
+      - DB_PORT
 
     depends_on:
       - web
@@ -58,7 +63,7 @@ services:
     entrypoint: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
     volumes:
       - ./media:/app/media
-
+      - /home/models/enhance/:/app/image_processing/models/enhance
   redis:
     image: redis:7-alpine
 
