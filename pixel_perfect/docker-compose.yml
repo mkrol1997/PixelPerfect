@@ -31,7 +31,7 @@ services:
         python manage.py runserver 0.0.0.0:80
     volumes:
       - /home/pixel_perfect/models/enhance:/app/image_processing/models/enhance
-      - /home/pixel_perfect/media:/app/media
+      - /home/pixel_perfect/media/:/app/media/
     ports:
       - "80:80"
 
@@ -62,8 +62,8 @@ services:
       - redis
     entrypoint: python3 -m celery -A images.celery_tasks:celery_obj worker -l INFO
     volumes:
-      - /home/PixelPerfect/models/enhance:/app/image_processing/models/enhance
-      - /home/PixelPerfect/media:/app/media
+      - /home/pixel_perfect/models/enhance:/app/image_processing/models/enhance
+      - /home/pixel_perfect/media/:/app/media/
   redis:
     image: redis:7-alpine
 
