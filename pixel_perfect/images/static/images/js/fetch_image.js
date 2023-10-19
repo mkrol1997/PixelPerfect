@@ -46,15 +46,7 @@ function fetch_image(task_id) {
 		get_status_api = window.location.protocol + '//' + window.location.host + '/images/track/?task_id=' + task_id;
 
 		let response = await fetch(get_status_api);
-		try{
-		    let json_response = await response.json();
-		} catch (error){
-		    console.log(error)
-            if(confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")){
-                window.location.reload();
-            }
-		}
-
+		let json_response = await response.json();
 
 		if(json_response.status == 'SUCCESS') {
 		    var timestamp = '?t=' + new Date().getTime();
@@ -76,7 +68,6 @@ function fetch_image(task_id) {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log(src_image.files[0])
     document.getElementById('messageContainer').setAttribute("style", "display: none");
 
     toggle_loader()
@@ -96,13 +87,20 @@ form.addEventListener('submit', async (e) => {
         const upscale_task = await response.json();
 
         if (upscale_task.form_valid) {
-            await fetch_image(upscale_task.task_id)
+            try{
+                await fetch_image(upscale_task.task_id)
+            } catch(error) {
+                if(confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")){
+                    window.location.reload();
+                }
+            }
 
         } else {
             localStorage.setItem('formNotValid', 'true');
             location.reload();
         }
     } catch (error) {
+        console.log(error)
     }
 });
 
