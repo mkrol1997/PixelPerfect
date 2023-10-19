@@ -150,11 +150,9 @@ class TrackTaskView(View):
         result_wrapper = AsyncResult(task_id)
 
         try:
-            response = {"status": result_wrapper.status, 'result': result_wrapper.result}
-        except WorkerLostError:
-            response = {"status": 'ABORTED'}
-
-        return JsonResponse(response)
+            return JsonResponse({"status": result_wrapper.status, 'result': result_wrapper.result})
+        except TypeError:
+            return JsonResponse({"status": 'ABORTED'})
 
 
 class DeleteImageView(CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView):
