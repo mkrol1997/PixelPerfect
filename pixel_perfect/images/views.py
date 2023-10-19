@@ -147,13 +147,14 @@ class ImageGalleryView(CustomLoginRequiredMixin, ListView):
 class TrackTaskView(View):
     def get(self, request):
         task_id = request.GET.get("task_id")
+        result_wrapper = AsyncResult(task_id)
 
         try:
-            result_wrapper = AsyncResult(task_id)
+            response = {"status": result_wrapper.status, 'result': result_wrapper.result}
         except WorkerLostError:
-            return JsonResponse({"status": 'ABORTED'})
+            response = {"status": 'ABORTED'}
 
-        return JsonResponse({"status": result_wrapper.status, 'result': result_wrapper.result})
+        return JsonResponse(response)
 
 
 class DeleteImageView(CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView):
