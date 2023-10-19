@@ -88,10 +88,10 @@ class OAuth2GoogleDriveAccessView(View):
         credentials = settings.GOOGLE_CLIENT_CONFIG
 
         flow = google_auth_oauthlib.flow.Flow.from_client_config(
-            credentials, scopes=["https://www.googleapis.com/auth/drive.file"]
+            credentials,
+            scopes=["https://www.googleapis.com/auth/drive.file"],
+            redirect_uri= settings.GOOGLE_OAUTH_REDIRECT_URI
         )
-
-        flow.redirect_uri = settings.GOOGLE_OAUTH_REDIRECT_URI
 
         authorization_url, state = flow.authorization_url(
             access_type="online", login_hint=request.user.email, include_granted_scopes="false"
