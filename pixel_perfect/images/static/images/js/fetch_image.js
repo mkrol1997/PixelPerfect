@@ -60,6 +60,10 @@ function fetch_image(task_id) {
             submitBtn.disabled = false;
 			return;
 		}
+        if(json_response.status == 'ABORTED'){
+            confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")
+            location.reload();
+        }
 
 		fetch_image(task_id);
 	}, 1000);
@@ -68,6 +72,7 @@ function fetch_image(task_id) {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     document.getElementById('messageContainer').setAttribute("style", "display: none");
 
     toggle_loader()
@@ -87,13 +92,7 @@ form.addEventListener('submit', async (e) => {
         const upscale_task = await response.json();
 
         if (upscale_task.form_valid) {
-            try{
-                await fetch_image(upscale_task.task_id)
-            } catch(error) {
-                if(confirm("This is presentation purpose server instance. Limited resources may affect the functionality of this website. The page will be reloaded")){
-                    window.location.reload();
-                }
-            }
+            await fetch_image(upscale_task.task_id)
 
         } else {
             localStorage.setItem('formNotValid', 'true');
