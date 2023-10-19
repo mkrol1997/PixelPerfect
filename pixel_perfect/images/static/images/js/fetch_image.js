@@ -68,7 +68,6 @@ function fetch_image(task_id) {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log(src_image.files[0])
     document.getElementById('messageContainer').setAttribute("style", "display: none");
 
     toggle_loader()
