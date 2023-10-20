@@ -41,7 +41,7 @@ services:
       - /home/pixel_perfect/models/enhance:/app/image_processing/models/enhance
       - /home/pixel_perfect/media/:/app/media/
     ports:
-      - "8000:8000"
+      - "80:80"
 
   queue:
     build: .
