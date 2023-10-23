@@ -1,0 +1,31 @@
+{% extends 'pixel_perfect/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'pixel_perfect/css/404.css' %}">
+
+{% endblock %}
+{% block content %}
+<section class="page_404 w-100 d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row w-100">
+    <div class="col-sm-12 d-flex align-items-center justify-content-center">
+    <div class="col-sm-10 col-sm-offset-1  text-center">
+    <div class="four_zero_four_bg">
+      <h1 class="text-center rainbow-text">500 Internal Server Error</h1>
+    </div>
+
+    <div class="contant_box_404">
+    <h3 class="h2">
+    Something went wrong
+    </h3>
+
+    <p>The page you are looking for is not available!</p>
+    <a href="{% url 'login' %}" class="btn gradient-background w-25 card-read-more align-bottom" style="border-radius: 1rem">Go to Home</a>
+  </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
