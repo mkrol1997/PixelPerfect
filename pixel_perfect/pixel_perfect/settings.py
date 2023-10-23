@@ -107,6 +107,7 @@ GOOGLE_OAUTH_REDIRECT_URI = os.getenv('GOOGLE_OAUTH_REDIRECT_URI')
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -115,6 +116,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+WHITENOISE_MIMETYPES = {
+    '.css': 'text/css'
+}
 
 TEMPLATES = [
     {
@@ -187,6 +191,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Static files (CSS, JavaScript, Images)
 
+
+STATIC_ROOT = BASE_DIR / "static/"
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
