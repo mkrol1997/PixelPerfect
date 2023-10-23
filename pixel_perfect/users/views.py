@@ -6,13 +6,15 @@ import google_auth_oauthlib
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth.views import LoginView, TemplateView
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import PasswordChangeDoneView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, redirect, reverse
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView
+from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
 from django.views.generic.edit import DeleteView, FormView
 from oauthlib.oauth2.rfc6749.errors import AccessDeniedError
@@ -83,6 +85,14 @@ class UserRegisterView(SuccessMessageMixin, CreateView):
         return reverse("login")
 
 
+class PasswordChangeDoneCustomView(PasswordChangeDoneView):
+    template_name = 'pixel_perfect/dashboard.html'
+
+    def get(self, request, *args, **kwargs):
+        messages.success(request, 'Your password has been changed!')
+        return super().get(request, *args, **kwargs)
+
+
 class OAuth2GoogleDriveAccessView(View):
     def get(self, request):
         credentials = settings.GOOGLE_CLIENT_CONFIG
@@ -90,7 +100,7 @@ class OAuth2GoogleDriveAccessView(View):
         flow = google_auth_oauthlib.flow.Flow.from_client_config(
             credentials,
             scopes=["https://www.googleapis.com/auth/drive.file"],
-            redirect_uri= settings.GOOGLE_OAUTH_REDIRECT_URI
+            redirect_uri=settings.GOOGLE_OAUTH_REDIRECT_URI
         )
 
         authorization_url, state = flow.authorization_url(
