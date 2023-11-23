@@ -29,12 +29,11 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Run Django tests
-        run: |
-          python manage.py makemigrations
-          python manage.py migrate
+        run:
           python manage.py test
         working-directory: ${{ github.workspace }}/pixel_perfect
         env:
+          DJANGO_TESTS: True
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
