@@ -107,7 +107,6 @@ GOOGLE_OAUTH_REDIRECT_URI = os.getenv('GOOGLE_OAUTH_REDIRECT_URI')
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -115,10 +114,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-WHITENOISE_MIMETYPES = {
-    '.css': 'text/css'
-}
 
 TEMPLATES = [
     {
@@ -138,8 +133,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "pixel_perfect.wsgi.application"
 
-# Database
 
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -149,11 +144,14 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT'),
     },
-    'test': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ":memory:",
+        'TEST_NAME': ":memory:"
+    }
 
 # Password validation
 
@@ -179,7 +177,6 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
-
 
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = os.getenv("EMAIL")
@@ -208,4 +205,3 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
