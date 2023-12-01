@@ -35,6 +35,7 @@ jobs:
           python manage.py test
         working-directory: ${{ github.workspace }}/pixel_perfect
         env:
+          DJANGO_CI_TESTS: true
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
